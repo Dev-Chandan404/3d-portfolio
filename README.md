@@ -62,13 +62,11 @@ This portfolio combines the power of **Three.js 3D graphics**, **GSAP animations
 
 ## 📂 Portfolio Sections
 
-```
 🏠 Hero          →  Stunning 3D animated introduction
 👨‍💻 About         →  My story, background & passion
 🛠️  Skills        →  Technologies & tools I master
 🚀 Projects      →  Featured work & case studies
 📬 Contact       →  Let's connect & collaborate
-```
 
 ---
 
@@ -76,15 +74,12 @@ This portfolio combines the power of **Three.js 3D graphics**, **GSAP animations
 
 ### Prerequisites
 
-Make sure you have the following installed:
-
 - **Node.js** >= 18.0.0
 - **npm** >= 9.0.0 or **yarn**
 - **Git**
 
 ### ⚡ Quick Start
 
-```bash
 # 1️⃣ Clone the repository
 git clone https://github.com/Dev-Chandan404/3d-portfolio.git
 
@@ -96,19 +91,13 @@ npm install
 
 # 4️⃣ Start the development server
 npm run dev
-```
 
-🎉 Open [http://localhost:5173](http://localhost:5173) and see the magic!
+🎉 Open http://localhost:5173 and see the magic!
 
 ### 📦 Build for Production
 
-```bash
-# Create optimized production build
 npm run build
-
-# Preview the production build locally
 npm run preview
-```
 
 ---
 
@@ -116,22 +105,17 @@ npm run preview
 
 This project is live on **Netlify** with automatic deployments from the `main` branch.
 
-**Deploy your own copy:**
-
-```
 1. Fork this repository
 2. Go to netlify.com → New Site → Import from Git
 3. Connect your forked repo
-4. Set Build Command  →  npm run build
-5. Set Publish Dir   →  dist
+4. Set Build Command → npm run build
+5. Set Publish Dir → dist
 6. Click Deploy! 🚀
-```
 
 ---
 
 ## 📁 Project Structure
 
-```
 3d-portfolio/
 ├── 📂 public/           # Static assets & 3D models
 ├── 📂 src/
@@ -145,13 +129,12 @@ This project is live on **Netlify** with automatic deployments from the `main` b
 ├── tailwind.config.js
 ├── vite.config.js
 └── package.json
-```
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+Distributed under the **MIT License**.
 
 ---
 
