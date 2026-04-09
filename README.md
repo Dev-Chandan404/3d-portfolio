@@ -4,7 +4,7 @@
 
 ### *Where Code Meets Creativity in Three Dimensions*
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/production/deploy-status)](https://chandan404.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/69d4f99645f7c91d5f289f93/deploy-status)](https://chandan404.netlify.app)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)](https://threejs.org)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
@@ -17,7 +17,7 @@
 
 <br/>
 
-![Portfolio Preview](https://via.placeholder.com/900x400/0f0f0f/ffffff?text=🚀+Chandan+Kumar+3D+Portfolio)
+![Portfolio Preview](https://image.thum.io/get/width/1200/crop/630/https://chandan404.netlify.app)
 
 </div>
 
