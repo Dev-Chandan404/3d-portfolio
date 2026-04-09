@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cfa355;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#393632;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e5e5e0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b8b73;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle (optional) -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad1)" stroke="#e5e5e0" stroke-width="2"/>
+
+  <!-- 3D Cube (isometric) -->
+  <g transform="translate(50, 50) scale(0.35)">
+    <!-- Top face -->
+    <polygon points="0,-30 26,-15 0,0 -26,-15" fill="url(#grad2)" stroke="#e5e5e0" stroke-width="2"/>
+    <!-- Left face -->
+    <polygon points="-26,-15 0,0 0,30 -26,15" fill="#393632" stroke="#e5e5e0" stroke-width="2"/>
+    <!-- Right face -->
+    <polygon points="0,0 26,-15 26,15 0,30" fill="#cfa355" stroke="#e5e5e0" stroke-width="2"/>
+  </g>
+
+  <!-- OR: 3D Sphere alternative (uncomment and comment out cube) -->
+  
+  <radialGradient id="sphereGrad" cx="30%" cy="30%" r="70%">
+    <stop offset="0%" stop-color="#e5e5e0"/>
+    <stop offset="70%" stop-color="#cfa355"/>
+    <stop offset="100%" stop-color="#393632"/>
+  </radialGradient>
+  <circle cx="50" cy="50" r="40" fill="url(#sphereGrad)"/>
+  <ellipse cx="35" cy="35" rx="12" ry="8" fill="white" opacity="0.3"/>
+  
+</svg>
