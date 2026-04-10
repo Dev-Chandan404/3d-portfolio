@@ -66,21 +66,27 @@ This portfolio combines the power of **Three.js 3D graphics**, **GSAP animations
 <table align="center">
   <tr>
     <td align="center">🎮</td>
-    <td><strong>Interactive 3D</strong><br/>Real-time 3D scenes powered by Three.js & React Three Fiber</td>
     <td align="center">🎬</td>
-    <td><strong>GSAP Animations</strong><br/>Buttery smooth transitions and scroll‑triggered animations</td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Interactive 3D</strong><br/>Real-time 3D scenes powered by Three.js & React Three Fiber</td>
+    <td align="center"><strong>GSAP Animations</strong><br/>Buttery smooth transitions and scroll‑triggered animations</td>
   </tr>
   <tr>
     <td align="center">📱</td>
-    <td><strong>Fully Responsive</strong><br/>Looks great on mobile, tablet, and desktop</td>
     <td align="center">⚡</td>
-    <td><strong>Blazing Fast</strong><br/>Optimized with Vite for lightning‑fast load times</td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Fully Responsive</strong><br/>Looks great on mobile, tablet, and desktop</td>
+    <td align="center"><strong>Blazing Fast</strong><br/>Optimized with Vite for lightning‑fast load times</td>
   </tr>
   <tr>
     <td align="center">🎨</td>
-    <td><strong>Modern UI</strong><br/>Clean and minimal design with Tailwind CSS</td>
     <td align="center">🌙</td>
-    <td><strong>Dark Theme</strong><br/>Sleek dark aesthetic throughout</td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Modern UI</strong><br/>Clean and minimal design with Tailwind CSS</td>
+    <td align="center"><strong>Dark Theme</strong><br/>Sleek dark aesthetic throughout</td>
   </tr>
 </table>
 
@@ -148,4 +154,15 @@ npm run dev
 ├── vite.config.js
 └── package.json
 ```
-<div align="center" style="perspective: 800px; margin-top: 2rem;"> <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e); padding: 2rem; border-radius: 1.5rem; box-shadow: 0 30px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); transform: rotateX(5deg) translateY(-5px); transition: transform 0.3s ease; display: inline-block; width: 90%; max-width: 700px;"> <h3 style="color: #ffffff; font-family: monospace; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5), 0 0 10px rgba(255,170,68,0.3);"> ✦ CHANDAN KUMAR ✦ </h3> <p style="color: #cccccc; font-size: 1rem; margin-bottom: 1rem;"> <a href="mailto:chandankumar404@gmail.com" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem; text-shadow: 0 0 3px rgba(255,170,68,0.5);">📧 Email</a> • <a href="https://github.com/Dev-Chandan404" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem; text-shadow: 0 0 3px rgba(255,170,68,0.5);">🐙 GitHub</a> • <a href="https://chandan404.netlify.app" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem; text-shadow: 0 0 3px rgba(255,170,68,0.5);">🌐 Portfolio</a> </p> <div style="height: 2px; background: linear-gradient(90deg, transparent, #ffaa44, #ff44aa, transparent); width: 80%; margin: 1rem auto; box-shadow: 0 0 5px #ffaa44;"></div> <p style="color: #ffffff; font-size: 1.1rem; font-weight: 300; text-shadow: 0 1px 2px black;"> ⭐ <strong>If you like this project, please star the repository</strong> ⭐ </p> <p style="color: #888888; font-size: 0.8rem; margin-top: 1rem;"> Made with <span style="color: #ff4444; text-shadow: 0 0 3px #ff4444;">❤️</span> in code & creativity </p> <p style="color: #555555; font-size: 0.7rem; margin-top: 0.5rem;"> Three.js • React • GSAP • Tailwind • Vite </p> </div> </div> ```
+📄 License
+Distributed under the MIT License. See LICENSE file for more information.
+
+<div align="center"><!-- Footer – matching the header style --><br/> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" alt="Sparkles" width="25" height="25" /> **Let's Connect** <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" alt="Sparkles" width="25" height="25" />
+<p align="center"> <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a> <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a> <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio" /></a> </p>
+⭐ If you like this project, please give it a star! ⭐
+
+
+Made with ❤️ by Chandan Kumar
+
+
+</div> ```
