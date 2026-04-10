@@ -148,30 +148,4 @@ npm run dev
 ├── vite.config.js
 └── package.json
 ```
-<div align="center" style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e); padding: 2rem; border-radius: 1.5rem; margin-top: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);">
-
-  <h3 style="color: #ffffff; font-family: monospace; letter-spacing: 2px; margin-bottom: 0.5rem;">
-    ✦ CHANDAN KUMAR ✦
-  </h3>
-  
-  <p style="color: #cccccc; font-size: 1rem; margin-bottom: 1rem;">
-    <a href="mailto:chandankumar404@gmail.com" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem;">📧 Email</a> •
-    <a href="https://github.com/Dev-Chandan404" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem;">🐙 GitHub</a> •
-    <a href="https://chandan404.netlify.app" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem;">🌐 Portfolio</a>
-  </p>
-  
-  <div style="height: 2px; background: linear-gradient(90deg, transparent, #ffaa44, #ff44aa, transparent); width: 80%; margin: 1rem auto;"></div>
-  
-  <p style="color: #ffffff; font-size: 1.1rem; font-weight: 300;">
-    ⭐ <strong>If you like this project, please star the repository</strong> ⭐
-  </p>
-  
-  <p style="color: #888888; font-size: 0.8rem; margin-top: 1rem;">
-    Made with <span style="color: #ff4444;">❤️</span> in code & creativity
-  </p>
-  
-  <p style="color: #555555; font-size: 0.7rem; margin-top: 0.5rem;">
-    Three.js • React • GSAP • Tailwind • Vite
-  </p>
-
-</div>
+<div align="center" style="perspective: 800px; margin-top: 2rem;"> <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e); padding: 2rem; border-radius: 1.5rem; box-shadow: 0 30px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); transform: rotateX(5deg) translateY(-5px); transition: transform 0.3s ease; display: inline-block; width: 90%; max-width: 700px;"> <h3 style="color: #ffffff; font-family: monospace; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5), 0 0 10px rgba(255,170,68,0.3);"> ✦ CHANDAN KUMAR ✦ </h3> <p style="color: #cccccc; font-size: 1rem; margin-bottom: 1rem;"> <a href="mailto:chandankumar404@gmail.com" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem; text-shadow: 0 0 3px rgba(255,170,68,0.5);">📧 Email</a> • <a href="https://github.com/Dev-Chandan404" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem; text-shadow: 0 0 3px rgba(255,170,68,0.5);">🐙 GitHub</a> • <a href="https://chandan404.netlify.app" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem; text-shadow: 0 0 3px rgba(255,170,68,0.5);">🌐 Portfolio</a> </p> <div style="height: 2px; background: linear-gradient(90deg, transparent, #ffaa44, #ff44aa, transparent); width: 80%; margin: 1rem auto; box-shadow: 0 0 5px #ffaa44;"></div> <p style="color: #ffffff; font-size: 1.1rem; font-weight: 300; text-shadow: 0 1px 2px black;"> ⭐ <strong>If you like this project, please star the repository</strong> ⭐ </p> <p style="color: #888888; font-size: 0.8rem; margin-top: 1rem;"> Made with <span style="color: #ff4444; text-shadow: 0 0 3px #ff4444;">❤️</span> in code & creativity </p> <p style="color: #555555; font-size: 0.7rem; margin-top: 0.5rem;"> Three.js • React • GSAP • Tailwind • Vite </p> </div> </div> ```
