@@ -166,11 +166,11 @@ npm run dev
   <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" />
 </a>
 
-<br/><br/>
+<br/>
 
 ⭐ **If you like this project, please give it a star!** ⭐
 
-<br/>
+
 
 *Made with ❤️ by Chandan Kumar*
 
