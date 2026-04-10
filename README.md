@@ -18,7 +18,7 @@
 <br/>
 
 <p align="center">
-  <img src="./public/images/portfolio.png" alt="Portfolio Preview" width="800">
+  <img src="./public/images/portfolio.png" alt="Portfolio Preview" width="1000">
   <br>
   <em>My–Portfolio</em>
 </p>
