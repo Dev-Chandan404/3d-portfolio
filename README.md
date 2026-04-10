@@ -17,8 +17,11 @@
 
 <br/>
 
-![Portfolio Preview](images/portfolio.png)
-
+<p align="center">
+  <img src="./images/portfolio.png" alt="Portfolio Preview" width="800">
+  <br>
+  <em>My 3D Portfolio – Mobile Responsive</em>
+</p>
 </div>
 
 ---
