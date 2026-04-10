@@ -148,30 +148,30 @@ npm run dev
 ├── vite.config.js
 └── package.json
 ```
-<div align="center">
+<div align="center" style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e); padding: 2rem; border-radius: 1.5rem; margin-top: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);">
 
----
-
-**Chandan Kumar**  
-📧 [chandankumar404@gmail.com](mailto:chandankumar404@gmail.com)  
-🐙 [github.com/Dev-Chandan404](https://github.com/Dev-Chandan404)  
-🌐 [chandan404.netlify.app](https://chandan404.netlify.app)
-
-⭐ *If you find this project useful, please star the repository.*
-
-*Made with dedication*
-
-</div>
-<a href="https://chandan404.netlify.app">
-  <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" />
-</a>
-
-<br/>
-
-⭐ **If you like this project, please give it a star!** ⭐
-
-
-
-*Made with ❤️ by Chandan Kumar*
+  <h3 style="color: #ffffff; font-family: monospace; letter-spacing: 2px; margin-bottom: 0.5rem;">
+    ✦ CHANDAN KUMAR ✦
+  </h3>
+  
+  <p style="color: #cccccc; font-size: 1rem; margin-bottom: 1rem;">
+    <a href="mailto:chandankumar404@gmail.com" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem;">📧 Email</a> •
+    <a href="https://github.com/Dev-Chandan404" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem;">🐙 GitHub</a> •
+    <a href="https://chandan404.netlify.app" style="color: #ffaa44; text-decoration: none; margin: 0 0.5rem;">🌐 Portfolio</a>
+  </p>
+  
+  <div style="height: 2px; background: linear-gradient(90deg, transparent, #ffaa44, #ff44aa, transparent); width: 80%; margin: 1rem auto;"></div>
+  
+  <p style="color: #ffffff; font-size: 1.1rem; font-weight: 300;">
+    ⭐ <strong>If you like this project, please star the repository</strong> ⭐
+  </p>
+  
+  <p style="color: #888888; font-size: 0.8rem; margin-top: 1rem;">
+    Made with <span style="color: #ff4444;">❤️</span> in code & creativity
+  </p>
+  
+  <p style="color: #555555; font-size: 0.7rem; margin-top: 0.5rem;">
+    Three.js • React • GSAP • Tailwind • Vite
+  </p>
 
 </div>
