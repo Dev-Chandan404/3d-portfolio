@@ -17,7 +17,7 @@
 
 <br/>
 
-![Portfolio Preview](https://image.thum.io/get/width/1200/crop/630/https://chandan404.netlify.app)
+![Portfolio Preview](./images/portfolio.png)
 
 </div>
 
