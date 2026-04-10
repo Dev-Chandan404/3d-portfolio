@@ -132,9 +132,8 @@ npm install
 
 # 4️⃣ Start the development server
 npm run dev
-
-
-
+```
+📁 Project Structure
 3d-portfolio/
 ├── 📂 public/           # Static assets & 3D models
 ├── 📂 src/
@@ -149,11 +148,9 @@ npm run dev
 ├── vite.config.js
 └── package.json
 
-
 📄 License
 Distributed under the MIT License. See LICENSE file for more information.
 
-<div align="center">
 🙋‍♂️ Let's Connect!
 Chandan Kumar
 
