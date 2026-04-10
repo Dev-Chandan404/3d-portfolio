@@ -17,7 +17,7 @@
 
 <br/>
 
-![Portfolio Preview](./images/portfolio.png)
+![Portfolio Preview](images/portfolio.png)
 
 </div>
 
