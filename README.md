@@ -154,6 +154,7 @@ npm run dev
 ├── vite.config.js
 └── package.json
 ```
+<br/>
 📄 License
 Distributed under the MIT License. See LICENSE file for more information.
 
@@ -165,4 +166,4 @@ Distributed under the MIT License. See LICENSE file for more information.
 Made with ❤️ by Chandan Kumar
 
 
-</div> ```
+</div> 
