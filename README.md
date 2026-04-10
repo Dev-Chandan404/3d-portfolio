@@ -150,7 +150,7 @@ npm run dev
 
 📄 License
 Distributed under the MIT License. See LICENSE file for more information.
-
+<div align="center">
 🙋‍♂️ Let's Connect!
 Chandan Kumar
 
