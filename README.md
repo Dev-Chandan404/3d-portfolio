@@ -155,10 +155,12 @@ npm run dev
 └── package.json
 ```
 <br/>
-📄 License
-Distributed under the MIT License. See LICENSE file for more information.
 
-<div align="center"><!-- Footer – matching the header style --><br/> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" alt="Sparkles" width="25" height="25" /> **Let's Connect** <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" alt="Sparkles" width="25" height="25" />
+
+<div align="center">
+  📄 License
+Distributed under the MIT License. See LICENSE file for more information.
+  <!-- Footer – matching the header style --><br/> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" alt="Sparkles" width="25" height="25" /> **Let's Connect** <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" alt="Sparkles" width="25" height="25" />
 <p align="center"> <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a> <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a> <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio" /></a> </p>
 ⭐ If you like this project, please give it a star! ⭐
 
