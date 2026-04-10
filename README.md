@@ -152,7 +152,7 @@ npm run dev
 
 ## 🙋‍♂️ Let's Connect!
 
-**Chandan Kumar**
+<h3>**Chandan Kumar**</h3>
 
 <br/>
 
