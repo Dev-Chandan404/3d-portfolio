@@ -150,18 +150,18 @@ npm run dev
 ```
 <div align="center">
 
-## 🙋‍♂️ Let's Connect!
+---
 
-<h3>**Chandan Kumar**</h3>
+**Chandan Kumar**  
+📧 [chandankumar404@gmail.com](mailto:chandankumar404@gmail.com)  
+🐙 [github.com/Dev-Chandan404](https://github.com/Dev-Chandan404)  
+🌐 [chandan404.netlify.app](https://chandan404.netlify.app)
 
-<br/>
+⭐ *If you find this project useful, please star the repository.*
 
-<a href="mailto:chandankumar404@gmail.com">
-  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-</a>
-<a href="https://github.com/Dev-Chandan404">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
+*Made with dedication*
+
+</div>
 <a href="https://chandan404.netlify.app">
   <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" />
 </a>
