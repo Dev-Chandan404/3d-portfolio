@@ -132,3 +132,19 @@ npm install
 
 # 4️⃣ Start the development server
 npm run dev
+
+
+
+3d-portfolio/
+├── 📂 public/           # Static assets & 3D models
+├── 📂 src/
+│   ├── 📂 assets/       # Images, icons & media
+│   ├── 📂 components/   # Reusable React components
+│   ├── 📂 constants/    # Data & configuration
+│   ├── 📂 styles/       # Global styles
+│   ├── App.jsx          # Root component
+│   └── main.jsx         # Entry point
+├── index.html
+├── tailwind.config.js
+├── vite.config.js
+└── package.json
