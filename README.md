@@ -148,21 +148,30 @@ npm run dev
 ├── vite.config.js
 └── package.json
 ```
-📄 License
-Distributed under the MIT License. See LICENSE file for more information.
 <div align="center">
-🙋‍♂️ Let's Connect!
-Chandan Kumar
 
-<a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-<a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
-<a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" /></a>
+## 🙋‍♂️ Let's Connect!
 
+**Chandan Kumar**
 
+<br/>
 
+<a href="mailto:chandankumar404@gmail.com">
+  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+<a href="https://github.com/Dev-Chandan404">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+<a href="https://chandan404.netlify.app">
+  <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" />
+</a>
 
-⭐ If you like this project, please give it a star! ⭐
+<br/><br/>
 
-Made with ❤️ by Chandan Kumar
+⭐ **If you like this project, please give it a star!** ⭐
 
-</div> ```
+<br/>
+
+*Made with ❤️ by Chandan Kumar*
+
+</div>
