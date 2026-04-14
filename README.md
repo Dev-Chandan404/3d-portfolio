@@ -130,18 +130,7 @@ npm install
 
 # 4️⃣ Start the development server
 npm run dev
-```
-🌍 Deployment
-
-This portfolio is deployed on Netlify with automatic CI/CD from the main branch.
-
-https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
-
-Manual Deployment Steps
-Build the project:
-
-bash
-npm run build
+````
 
 ````
 📁 Project Structure
