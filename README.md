@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- Animated gold title with sparkles -->
+<!-- Static gold stars (no animation, GitHub‑safe) -->
 <h1>
   <span style="display: inline-block; color: #FFD700; text-shadow: 0 0 4px #FFD700;">✦</span>
   <span style="background: linear-gradient(135deg, #FFD700, #FFC107, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800;">Chandan Kumar — 3D Developer Portfolio</span>
@@ -11,7 +11,7 @@
 
 <br/>
 
-<!-- Main badges row with hover effects -->
+<!-- Main badges with hover lift (inline events work) -->
 <p align="center">
   <a href="https://chandan404.netlify.app" onmouseover="this.style.transform='translateY(-3px)';this.style.filter='drop-shadow(0 0 6px #FFD700)'" onmouseout="this.style.transform='translateY(0px)';this.style.filter='none'" style="display: inline-block; transition: all 0.2s ease;">
     <img src="https://img.shields.io/badge/LIVE_DEMO-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000" />
@@ -24,7 +24,7 @@
   </a>
 </p>
 
-<!-- Tech stack badges -->
+<!-- Tech stack badges (gold & black) -->
 <p align="center">
   <img src="https://img.shields.io/badge/⚛️_React-18-000000?style=for-the-badge&logo=react&logoColor=FFD700&labelColor=000000" />
   <img src="https://img.shields.io/badge/🎨_Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=FFD700&labelColor=000000" />
@@ -40,7 +40,7 @@
 
 <br/>
 
-<!-- Portfolio preview screenshot with gold glow -->
+<!-- Portfolio preview screenshot (gold border + hover glow) -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png" alt="Portfolio Preview" width="85%" style="border-radius: 24px; border: 1px solid #FFD700; box-shadow: 0 0 15px rgba(255,215,0,0.3); transition: all 0.3s;" onmouseover="this.style.transform='scale(1.01)';this.style.boxShadow='0 0 25px rgba(255,215,0,0.6)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 15px rgba(255,215,0,0.3)'" />
   <br/>
@@ -48,8 +48,6 @@
 </p>
 
 </div>
-
-<style>@keyframes goldPulse{0%{text-shadow:0 0 0 #FFD700;opacity:.6}50%{text-shadow:0 0 8px #FFD700;opacity:1}100%{text-shadow:0 0 0 #FFD700;opacity:.6}}</style>
 
 ---
 
@@ -72,7 +70,7 @@
 
 > 🚀 A cutting-edge **3D interactive portfolio** that goes beyond the ordinary. Built with the latest web technologies to deliver a stunning visual experience that makes your work stand out from the crowd.
 
-This portfolio combines the power of **Three.js 3D graphics**, **GSAP animations**, and **React's component architecture** to create an immersive journey. Every scroll, hover, and click is crafted to leave a lasting impression.[reference:0]
+This portfolio combines the power of **Three.js 3D graphics**, **GSAP animations**, and **React's component architecture** to create an immersive journey. Every scroll, hover, and click is crafted to leave a lasting impression.
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=500&color=FFD700&center=true&vCenter=true&width=435&lines=Interactive+3D;Smooth+Animations;Fully+Responsive;Blazing+Fast" alt="Typing SVG" />
