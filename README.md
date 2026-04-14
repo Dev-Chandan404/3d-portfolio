@@ -145,7 +145,7 @@ npm run build
 Deploy the dist folder to Netlify (drag & drop or using Netlify CLI).
 
 Alternatively, connect your GitHub repository to Netlify for automatic deployments on every push.
-
+````
 📁 Project Structure
 text
 3d-portfolio/
@@ -161,6 +161,7 @@ text
 ├── tailwind.config.js
 ├── vite.config.js
 └── package.json
+````
 📄 License
 Distributed under the MIT License. See the LICENSE file for more information.
 
