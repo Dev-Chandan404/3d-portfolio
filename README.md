@@ -159,9 +159,6 @@ text
 ├── tailwind.config.js
 ├── vite.config.js
 └── package.json
-````
-📄 License
-Distributed under the MIT License. See the LICENSE file for more information.
 <!-- ========== ULTRA PREMIUM GOLDEN & BLACK FOOTER (CLEAN) ========== -->
 <br/>
 <div align="center">
@@ -184,16 +181,16 @@ Distributed under the MIT License. See the LICENSE file for more information.
     position: relative;
     font-family: 'Inter', sans-serif;
   ">
-    ```
+    
     <!-- Decorative corners -->
     <div style="position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; border-top: 2px solid #FFD700; border-left: 2px solid #FFD700; border-radius: 8px 0 0 0;"></div>
     <div style="position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-top: 2px solid #FFD700; border-right: 2px solid #FFD700; border-radius: 0 8px 0 0;"></div>
     <div style="position: absolute; bottom: 20px; left: 20px; width: 40px; height: 40px; border-bottom: 2px solid #FFD700; border-left: 2px solid #FFD700; border-radius: 0 0 0 8px;"></div>
     <div style="position: absolute; bottom: 20px; right: 20px; width: 40px; height: 40px; border-bottom: 2px solid #FFD700; border-right: 2px solid #FFD700; border-radius: 0 0 8px 0;"></div>
-```
+
     <!-- Center emblem -->
     <div style="margin-bottom: 15px; font-size: 2rem; animation: pulse 2s infinite; font-family: 'Montserrat', sans-serif;">✦</div>
-```
+
     <style>
       @keyframes pulse {
         0% { opacity: 0.6; text-shadow: 0 0 0px #FFD700; }
@@ -205,16 +202,16 @@ Distributed under the MIT License. See the LICENSE file for more information.
         100% { background-position: 200% 0; }
       }
     </style>
-```
+
     <!-- License -->
     <div style="margin-bottom: 30px;">
       <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; font-weight: 700; background: linear-gradient(135deg, #FFD700, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">✦ LICENSE ✦</div>
       <img src="https://img.shields.io/badge/MIT%20License-000000?style=for-the-badge&logo=opensourceinitiative&logoColor=FFD700&labelColor=000000&color=FFD700" style="border-radius: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.5);" />
     </div>
-```
+
     <!-- Shimmer divider -->
     <div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, #FFD700, #FFC107, #FF8C00, #FFD700, transparent); background-size: 200% auto; margin: 20px auto; border-radius: 2px; animation: shimmer 3s linear infinite;"></div>
-```
+
     <!-- Connect -->
     <div style="margin-bottom: 30px;">
       <div style="font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 20px; letter-spacing: 2px; font-family: 'Montserrat', sans-serif;">✦ CONNECT ✦</div>
@@ -226,10 +223,10 @@ Distributed under the MIT License. See the LICENSE file for more information.
         <a href="https://twitter.com/DevChandan404"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&labelColor=000000" /></a>
       </div>
     </div>
-```
+
     <!-- Second shimmer divider -->
     <div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, #FFD700, #FFC107, #FF8C00, #FFD700, transparent); background-size: 200% auto; margin: 20px auto; border-radius: 2px; animation: shimmer 3s linear infinite;"></div>
-```
+
     <!-- Support -->
     <div style="margin-bottom: 30px;">
       <div style="font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #FFC107, #FFD700, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 12px; font-family: 'Montserrat', sans-serif;">✦ SUPPORT ✦</div>
@@ -241,7 +238,7 @@ Distributed under the MIT License. See the LICENSE file for more information.
         <img src="https://img.shields.io/badge/⭐-Thank%20You-FFD700?style=flat-square&logo=heart&logoColor=000000&labelColor=000000" />
       </div>
     </div>
-```
+
     <!-- Visitor Badge – that's the end -->
     <div style="margin-top: 20px;">
       <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="Visitor Count" style="border-radius: 25px; filter: drop-shadow(0 0 6px #FFD700);" />
