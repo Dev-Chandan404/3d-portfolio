@@ -131,18 +131,6 @@ npm install
 # 4️⃣ Start the development server
 npm run dev
 ```
-🔨 Available Scripts
-
-Command	Action
-
-npm run dev	Start development server
-
-npm run build	Build for production
-
-npm run preview	Preview production build locally
-
-npm run lint	Run ESLint to check code quality
-
 🌍 Deployment
 
 This portfolio is deployed on Netlify with automatic CI/CD from the main branch.
