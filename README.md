@@ -31,7 +31,8 @@
 <br/>
 
 <p align="center">
-  <img src="./public/images/portfolio.png" alt="Portfolio Preview" width="90%" />
+  <!-- FIXED: Use raw GitHub URL instead of relative path -->
+  <img src="https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png" alt="Portfolio Preview" width="90%" />
   <br/>
   <em>My–Portfolio – immersive 3D experience</em>
 </p>
@@ -100,6 +101,7 @@ This portfolio combines the power of **Three.js 3D graphics**, **GSAP animations
 |-------|----------|----------|------|------|------------|---------|
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/threejs/threejs-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/greensock/greensock-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg" width="50" height="50"/> |
 
+</div>
 
 ---
 
@@ -137,35 +139,3 @@ npm install
 
 # 4️⃣ Start the development server
 npm run dev
-
-📁 Project Structure
-3d-portfolio/
-├── 📂 public/           # Static assets & 3D models
-├── 📂 src/
-│   ├── 📂 assets/       # Images, icons & media
-│   ├── 📂 components/   # Reusable React components
-│   ├── 📂 constants/    # Data & configuration
-│   ├── 📂 styles/       # Global styles
-│   ├── App.jsx          # Root component
-│   └── main.jsx         # Entry point
-├── index.html
-├── tailwind.config.js
-├── vite.config.js
-└── package.json
-```
-<br/>
-
-
-<div align="center">
-  📄 License
-Distributed under the MIT License. See LICENSE file for more information.
-  <br/>
-  <!-- Footer – matching the header style --><br/> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" alt="Sparkles" width="25" height="25" /> **Let's Connect** <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" alt="Sparkles" width="25" height="25" />
-<p align="center"> <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a> <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a> <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio" /></a> </p>
-⭐ If you like this project, please give it a star! ⭐
-
-
-Made with ❤️ by Chandan Kumar
-
-
-</div> 
