@@ -142,9 +142,7 @@ Build the project:
 
 bash
 npm run build
-Deploy the dist folder to Netlify (drag & drop or using Netlify CLI).
 
-Alternatively, connect your GitHub repository to Netlify for automatic deployments on every push.
 ````
 📁 Project Structure
 text
