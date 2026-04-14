@@ -1,42 +1,42 @@
 <div align="center">
 
-<!-- Animated golden gradient title -->
+<!-- Animated gold title on black -->
 <h1>
-  <span style="animation: glowPulse 3s infinite;">✨</span>
-  <span style="background: linear-gradient(135deg, #FFD700, #FFC107, #FF8C00, #FFD700); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800;">Chandan Kumar — 3D Developer Portfolio</span>
-  <span style="animation: glowPulse 3s infinite;">✨</span>
+  <span style="animation: goldPulse 2.5s infinite;">✦</span>
+  <span style="background: linear-gradient(135deg, #FFD700, #FFC107, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800;">Chandan Kumar — 3D Developer Portfolio</span>
+  <span style="animation: goldPulse 2.5s infinite;">✦</span>
 </h1>
 
 ### *Where Code Meets Creativity in Three Dimensions*
 
 <br/>
 
-<!-- Main badges row with golden hover -->
+<!-- Main badges – black/gold theme -->
 <p align="center">
-  <a href="https://chandan404.netlify.app" style="transition: all 0.2s; display: inline-block;"><img src="https://img.shields.io/badge/LIVE_DEMO-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000&color=FFD700" /></a>
-  <a href="https://github.com/Dev-Chandan404/3d-portfolio" style="transition: all 0.2s; display: inline-block;"><img src="https://img.shields.io/badge/⭐_STAR_ON_GITHUB-000000?style=for-the-badge&logo=github&logoColor=FFD700&labelColor=000000&color=FFD700" /></a>
-  <a href="https://github.com/Dev-Chandan404/3d-portfolio/issues" style="transition: all 0.2s; display: inline-block;"><img src="https://img.shields.io/badge/REPORT_BUG-000000?style=for-the-badge&logo=bugsnag&logoColor=FFD700&labelColor=000000&color=FFD700" /></a>
+  <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/LIVE_DEMO-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000" /></a>
+  <a href="https://github.com/Dev-Chandan404/3d-portfolio"><img src="https://img.shields.io/badge/⭐_STAR_ON_GITHUB-000000?style=for-the-badge&logo=github&logoColor=FFD700&labelColor=000000" /></a>
+  <a href="https://github.com/Dev-Chandan404/3d-portfolio/issues"><img src="https://img.shields.io/badge/REPORT_BUG-000000?style=for-the-badge&logo=bugsnag&logoColor=FFD700&labelColor=000000" /></a>
 </p>
 
-<!-- Tech stack badges with golden icons -->
+<!-- Tech stack badges -->
 <p align="center">
-  <img src="https://img.shields.io/badge/⚛️_React-18-000000?style=for-the-badge&logo=react&logoColor=FFD700&labelColor=000000&color=FFD700" />
-  <img src="https://img.shields.io/badge/🎨_Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=FFD700&labelColor=000000&color=FFD700" />
-  <img src="https://img.shields.io/badge/💨_Tailwind_CSS-000000?style=for-the-badge&logo=tailwind-css&logoColor=FFD700&labelColor=000000&color=FFD700" />
-  <img src="https://img.shields.io/badge/✨_GSAP-000000?style=for-the-badge&logo=greensock&logoColor=FFD700&labelColor=000000&color=FFD700" />
-  <img src="https://img.shields.io/badge/⚡_Vite-000000?style=for-the-badge&logo=vite&logoColor=FFD700&labelColor=000000&color=FFD700" />
+  <img src="https://img.shields.io/badge/⚛️_React-18-000000?style=for-the-badge&logo=react&logoColor=FFD700&labelColor=000000" />
+  <img src="https://img.shields.io/badge/🎨_Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=FFD700&labelColor=000000" />
+  <img src="https://img.shields.io/badge/💨_Tailwind_CSS-000000?style=for-the-badge&logo=tailwind-css&logoColor=FFD700&labelColor=000000" />
+  <img src="https://img.shields.io/badge/✨_GSAP-000000?style=for-the-badge&logo=greensock&logoColor=FFD700&labelColor=000000" />
+  <img src="https://img.shields.io/badge/⚡_Vite-000000?style=for-the-badge&logo=vite&logoColor=FFD700&labelColor=000000" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/🚀_Deployed_on-Netlify-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000&color=FFD700" />
-  <img src="https://img.shields.io/badge/📜_License-MIT-000000?style=for-the-badge&logo=opensourceinitiative&logoColor=FFD700&labelColor=000000&color=FFD700" />
+  <img src="https://img.shields.io/badge/🚀_Deployed_on-Netlify-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000" />
+  <img src="https://img.shields.io/badge/📜_License-MIT-000000?style=for-the-badge&logo=opensourceinitiative&logoColor=FFD700&labelColor=000000" />
 </p>
 
 <br/>
 
-<!-- Portfolio preview screenshot with golden glow -->
+<!-- Portfolio preview with gold glow -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png" alt="Portfolio Preview" width="85%" style="border-radius: 28px; border: 2px solid #FFD700; box-shadow: 0 0 20px rgba(255,215,0,0.4); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" />
+  <img src="https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png" alt="Portfolio Preview" width="85%" style="border-radius: 24px; border: 1px solid #FFD700; box-shadow: 0 0 15px rgba(255,215,0,0.3); transition: all 0.3s;" onmouseover="this.style.transform='scale(1.01)';this.style.boxShadow='0 0 25px rgba(255,215,0,0.5)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 15px rgba(255,215,0,0.3)'" />
   <br/>
   <em style="color: #FFD700;">✨ My Portfolio – immersive 3D experience ✨</em>
 </p>
@@ -44,10 +44,10 @@
 </div>
 
 <style>
-  @keyframes glowPulse {
-    0% { text-shadow: 0 0 0px #FFD700; opacity: 0.7; }
-    50% { text-shadow: 0 0 10px #FFD700; opacity: 1; }
-    100% { text-shadow: 0 0 0px #FFD700; opacity: 0.7; }
+  @keyframes goldPulse {
+    0% { text-shadow: 0 0 0px #FFD700; opacity: 0.6; }
+    50% { text-shadow: 0 0 8px #FFD700; opacity: 1; }
+    100% { text-shadow: 0 0 0px #FFD700; opacity: 0.6; }
   }
   div[align="center"] a {
     transition: transform 0.2s ease, filter 0.2s ease;
