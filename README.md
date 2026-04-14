@@ -1,24 +1,32 @@
 <div align="center">
 
-<!-- Animated gold title on black -->
+<!-- Optional keyframes (may still work, safe to keep) -->
+<style>@keyframes goldPulse{0%{text-shadow:0 0 0 #FFD700;opacity:.6}50%{text-shadow:0 0 8px #FFD700;opacity:1}100%{text-shadow:0 0 0 #FFD700;opacity:.6}}</style>
+
 <h1>
-  <span style="animation: goldPulse 2.5s infinite;">✦</span>
+  <span style="display: inline-block; animation: goldPulse 2.5s infinite;">✦</span>
   <span style="background: linear-gradient(135deg, #FFD700, #FFC107, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800;">Chandan Kumar — 3D Developer Portfolio</span>
-  <span style="animation: goldPulse 2.5s infinite;">✦</span>
+  <span style="display: inline-block; animation: goldPulse 2.5s infinite;">✦</span>
 </h1>
 
-### *Where Code Meets Creativity in Three Dimensions*
+<h3><em>Where Code Meets Creativity in Three Dimensions</em></h3>
 
 <br/>
 
-<!-- Main badges – black/gold theme -->
+<!-- Main badges row with inline hover -->
 <p align="center">
-  <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/LIVE_DEMO-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000" /></a>
-  <a href="https://github.com/Dev-Chandan404/3d-portfolio"><img src="https://img.shields.io/badge/⭐_STAR_ON_GITHUB-000000?style=for-the-badge&logo=github&logoColor=FFD700&labelColor=000000" /></a>
-  <a href="https://github.com/Dev-Chandan404/3d-portfolio/issues"><img src="https://img.shields.io/badge/REPORT_BUG-000000?style=for-the-badge&logo=bugsnag&logoColor=FFD700&labelColor=000000" /></a>
+  <a href="https://chandan404.netlify.app" onmouseover="this.style.transform='translateY(-3px)';this.style.filter='drop-shadow(0 0 6px #FFD700)'" onmouseout="this.style.transform='translateY(0px)';this.style.filter='none'" style="display: inline-block; transition: all 0.2s ease;">
+    <img src="https://img.shields.io/badge/LIVE_DEMO-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000" />
+  </a>
+  <a href="https://github.com/Dev-Chandan404/3d-portfolio" onmouseover="this.style.transform='translateY(-3px)';this.style.filter='drop-shadow(0 0 6px #FFD700)'" onmouseout="this.style.transform='translateY(0px)';this.style.filter='none'" style="display: inline-block; transition: all 0.2s ease;">
+    <img src="https://img.shields.io/badge/⭐_STAR_ON_GITHUB-000000?style=for-the-badge&logo=github&logoColor=FFD700&labelColor=000000" />
+  </a>
+  <a href="https://github.com/Dev-Chandan404/3d-portfolio/issues" onmouseover="this.style.transform='translateY(-3px)';this.style.filter='drop-shadow(0 0 6px #FFD700)'" onmouseout="this.style.transform='translateY(0px)';this.style.filter='none'" style="display: inline-block; transition: all 0.2s ease;">
+    <img src="https://img.shields.io/badge/REPORT_BUG-000000?style=for-the-badge&logo=bugsnag&logoColor=FFD700&labelColor=000000" />
+  </a>
 </p>
 
-<!-- Tech stack badges -->
+<!-- Tech stack badges (no hover needed, but you can add if you like) -->
 <p align="center">
   <img src="https://img.shields.io/badge/⚛️_React-18-000000?style=for-the-badge&logo=react&logoColor=FFD700&labelColor=000000" />
   <img src="https://img.shields.io/badge/🎨_Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=FFD700&labelColor=000000" />
@@ -34,9 +42,14 @@
 
 <br/>
 
-<!-- Portfolio preview with gold glow -->
+<!-- Preview image with hover scale + glow -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png" alt="Portfolio Preview" width="85%" style="border-radius: 24px; border: 1px solid #FFD700; box-shadow: 0 0 15px rgba(255,215,0,0.3); transition: all 0.3s;" onmouseover="this.style.transform='scale(1.01)';this.style.boxShadow='0 0 25px rgba(255,215,0,0.5)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 15px rgba(255,215,0,0.3)'" />
+  <img src="https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png" 
+       alt="Portfolio Preview" 
+       width="85%" 
+       style="border-radius: 24px; border: 1px solid #FFD700; box-shadow: 0 0 15px rgba(255,215,0,0.3); transition: all 0.3s;"
+       onmouseover="this.style.transform='scale(1.01)';this.style.boxShadow='0 0 25px rgba(255,215,0,0.6)'"
+       onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 15px rgba(255,215,0,0.3)'" />
   <br/>
   <em style="color: #FFD700;">✨ My Portfolio – immersive 3D experience ✨</em>
 </p>
