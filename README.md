@@ -169,5 +169,10 @@ Distributed under the MIT License. See the LICENSE file for more information.
 If you like this project, please ⭐ star the repository and share it with others!
 </p>
 
-<p align="center"> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="25" height="25" /> <strong>Made with ❤️ by Chandan Kumar</strong> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="25" height="25" /> </p><p align="center"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="Visitor Count" /> </p>
+<p align="center">
+  <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-Dev--Chandan404-181717?style=flat-square&logo=github" /></a>
+  <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Email-chandankumar404%40gmail.com-D14836?style=flat-square&logo=gmail" /></a>
+  <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-chandan404.netlify.app-FF5722?style=flat-square&logo=react" /></a>
+  <img src="https://img.shields.io/badge/⭐-Thank%20you%20for%20visiting-4CAF50?style=flat-square" />
+</p><p align="center"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="Visitor Count" /> </p>
   
