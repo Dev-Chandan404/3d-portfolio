@@ -132,6 +132,7 @@ npm install
 npm run dev
 ```
 🔨 Available Scripts
+
 Command	Action
 npm run dev	Start development server
 npm run build	Build for production
