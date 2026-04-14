@@ -124,6 +124,52 @@ git clone https://github.com/Dev-Chandan404/3d-portfolio.git
 # 2️⃣ Navigate into the project
 cd 3d-portfolio
 
+```
+🔨 Available Scripts
+Command	Action
+npm run dev	Start dev server
+npm run build	Build for production
+npm run preview	Preview production build
+npm run lint	Run ESLint
+🌍 Deployment
+This portfolio is deployed on Netlify with automatic CI/CD from the main branch.
+
+https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
+
+Manual Deployment Steps
+Build the project: npm run build
+
+Deploy the dist folder to Netlify (drag & drop or CLI)
+
+Or connect your GitHub repo to Netlify for auto-deploys
+
+📁 Project Structure
+text
+3d-portfolio/
+├── 📂 public/           # Static assets & 3D models
+├── 📂 src/
+│   ├── 📂 assets/       # Images, icons & media
+│   ├── 📂 components/   # Reusable React components
+│   ├── 📂 constants/    # Data & configuration
+│   ├── 📂 styles/       # Global styles
+│   ├── App.jsx          # Root component
+│   └── main.jsx         # Entry point
+├── index.html
+├── tailwind.config.js
+├── vite.config.js
+└── package.json
+📄 License
+Distributed under the MIT License. See LICENSE file for more information.
+
+https://img.shields.io/badge/License-MIT-blue.svg
+
+🙋‍♂️ Let's Connect
+<p align="center"> <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a> <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a> <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" /></a> <a href="https://www.linkedin.com/in/chandan-kumar-404"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a> <a href="https://twitter.com/DevChandan404"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a> </p>
+💖 Support
+If you like this project, please ⭐ star the repository and share it with others!
+
+<p align="center"> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="25" height="25" /> <strong>Made with ❤️ by Chandan Kumar</strong> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="25" height="25" /> </p><p align="center"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="visitor badge" /> </p> ```
+
 # 3️⃣ Install all dependencies
 npm install
 
