@@ -162,17 +162,42 @@ text
 ````
 📄 License
 Distributed under the MIT License. See the LICENSE file for more information.
+<!-- ========== FOOTER ========== -->
+<br/>
+<div align="center">
+
+### 📄 License
+<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" />
+
+<br/>
+
+### 🙋‍♂️ Let's Connect
+
 <p align="center">
-<img src="https://img.shields.io/badge/License-MIT-blue.svg" /><p align="center">🙋‍♂️ Let's Connect</p> <p align="center"> <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a> <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a> <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" /></a> <a href="https://www.linkedin.com/in/chandan-kumar-404"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a> <a href="https://twitter.com/DevChandan404"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a> </p>
-<p align="center">
-💖 Support
-If you like this project, please ⭐ star the repository and share it with others!
+  <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/chandan-kumar-404"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://twitter.com/DevChandan404"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a>
 </p>
+
+<br/>
+
+### 💖 Support
+
+> **If you like this project, please ⭐ star the repository and share it with others!**
 
 <p align="center">
   <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-Dev--Chandan404-181717?style=flat-square&logo=github" /></a>
   <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Email-chandankumar404%40gmail.com-D14836?style=flat-square&logo=gmail" /></a>
   <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-chandan404.netlify.app-FF5722?style=flat-square&logo=react" /></a>
   <img src="https://img.shields.io/badge/⭐-Thank%20you%20for%20visiting-4CAF50?style=flat-square" />
-</p><p align="center"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="Visitor Count" /> </p>
-  
+</p>
+
+<br/>
+
+<p align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="Visitor Count" />
+</p>
+
+</div>
