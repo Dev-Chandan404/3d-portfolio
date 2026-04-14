@@ -11,14 +11,14 @@
 
 <br/>
 
-<!-- Animated badge row with hover effect (GitHub supports basic HTML) -->
+<!-- Main badges row -->
 <p align="center">
   <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/LIVE_DEMO-FF5722?style=for-the-badge&logo=netlify&logoColor=white&labelColor=black" /></a>
   <a href="https://github.com/Dev-Chandan404/3d-portfolio"><img src="https://img.shields.io/badge/⭐_STAR_ON_GITHUB-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=black" /></a>
   <a href="https://github.com/Dev-Chandan404/3d-portfolio/issues"><img src="https://img.shields.io/badge/REPORT_BUG-ff69b4?style=for-the-badge&logo=bugsnag&logoColor=white&labelColor=black" /></a>
 </p>
 
-<!-- Tech stack badges with emojis and colors -->
+<!-- Tech stack badges with emojis -->
 <p align="center">
   <img src="https://img.shields.io/badge/⚛️_React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
   <img src="https://img.shields.io/badge/🎨_Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white" />
@@ -34,11 +34,11 @@
 
 <br/>
 
-<!-- Portfolio preview screenshot (ensure this image exists in your repo) -->
+<!-- Portfolio preview screenshot -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png" alt="Portfolio Preview" width="85%" style="border-radius: 24px; border: 2px solid #FF5722; box-shadow: 0 0 20px rgba(255,87,34,0.5);" />
   <br/>
-  <em>✨ My–Portfolio – immersive 3D experience ✨</em>
+  <em>✨ My Portfolio – immersive 3D experience ✨</em>
 </p>
 
 </div>
@@ -51,6 +51,7 @@
 - [🛠️ Built With](#️-built-with)
 - [📂 Portfolio Sections](#-portfolio-sections)
 - [🚀 Getting Started](#-getting-started)
+- [🔨 Available Scripts](#-available-scripts)
 - [🌍 Deployment](#-deployment)
 - [📁 Project Structure](#-project-structure)
 - [📄 License](#-license)
@@ -124,24 +125,32 @@ git clone https://github.com/Dev-Chandan404/3d-portfolio.git
 # 2️⃣ Navigate into the project
 cd 3d-portfolio
 
+# 3️⃣ Install all dependencies
+npm install
+
+# 4️⃣ Start the development server
+npm run dev
 ```
 🔨 Available Scripts
 Command	Action
-npm run dev	Start dev server
+npm run dev	Start development server
 npm run build	Build for production
-npm run preview	Preview production build
-npm run lint	Run ESLint
+npm run preview	Preview production build locally
+npm run lint	Run ESLint to check code quality
+
 🌍 Deployment
 This portfolio is deployed on Netlify with automatic CI/CD from the main branch.
 
 https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
 
 Manual Deployment Steps
-Build the project: npm run build
+Build the project:
 
-Deploy the dist folder to Netlify (drag & drop or CLI)
+bash
+npm run build
+Deploy the dist folder to Netlify (drag & drop or using Netlify CLI).
 
-Or connect your GitHub repo to Netlify for auto-deploys
+Alternatively, connect your GitHub repository to Netlify for automatic deployments on every push.
 
 📁 Project Structure
 text
@@ -159,7 +168,7 @@ text
 ├── vite.config.js
 └── package.json
 📄 License
-Distributed under the MIT License. See LICENSE file for more information.
+Distributed under the MIT License. See the LICENSE file for more information.
 
 https://img.shields.io/badge/License-MIT-blue.svg
 
@@ -168,10 +177,4 @@ https://img.shields.io/badge/License-MIT-blue.svg
 💖 Support
 If you like this project, please ⭐ star the repository and share it with others!
 
-<p align="center"> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="25" height="25" /> <strong>Made with ❤️ by Chandan Kumar</strong> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="25" height="25" /> </p><p align="center"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="visitor badge" /> </p> ```
-
-# 3️⃣ Install all dependencies
-npm install
-
-# 4️⃣ Start the development server
-npm run dev
+<p align="center"> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="25" height="25" /> <strong>Made with ❤️ by Chandan Kumar</strong> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="25" height="25" /> </p><p align="center"> <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="Visitor Count" /> </p> ```
