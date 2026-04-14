@@ -1,85 +1,89 @@
-<!-- ╔══════════════════════════════════════════════════════════════╗ -->
-<!-- ║           CHANDAN KUMAR — 3D DEVELOPER PORTFOLIO            ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════╝ -->
-
 <div align="center">
 
-```
-  ██████╗██╗  ██╗ █████╗ ███╗   ██╗██████╗  █████╗ ███╗   ██╗
- ██╔════╝██║  ██║██╔══██╗████╗  ██║██╔══██╗██╔══██╗████╗  ██║
- ██║     ███████║███████║██╔██╗ ██║██║  ██║███████║██╔██╗ ██║
- ██║     ██╔══██║██╔══██║██║╚██╗██║██║  ██║██╔══██║██║╚██╗██║
- ╚██████╗██║  ██║██║  ██║██║ ╚████║██████╔╝██║  ██║██║ ╚████║
-  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
-```
+<!-- 3D card container with subtle depth -->
+<div style="perspective: 1200px; transform-style: preserve-3d; display: inline-block; width: 100%; max-width: 880px; margin: 20px auto;">
+  <div style="
+    background: radial-gradient(ellipse at 30% 20%, #0c0c0c, #000000);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    padding: 40px 30px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,215,0,0.1) inset;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transform-style: preserve-3d;
+  " onmouseover="this.style.transform='rotateX(1.5deg) rotateY(1.5deg) translateZ(8px)';this.style.boxShadow='0 28px 40px rgba(0,0,0,0.7), 0 0 0 2px rgba(255,215,0,0.2) inset';" onmouseout="this.style.transform='rotateX(0deg) rotateY(0deg) translateZ(0px)';this.style.boxShadow='0 20px 35px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,215,0,0.1) inset';">
 
-### ◈ *Where Code Meets Creativity in Three Dimensions* ◈
+    <!-- Gold accent line -->
+    <div style="width: 60px; height: 2px; background: #FFD700; margin: 0 auto 25px; border-radius: 2px; opacity: 0.7;"></div>
 
-<br/>
+    <!-- Name & title -->
+    <h1 style="margin: 0; font-weight: 700; letter-spacing: -0.5px; background: linear-gradient(135deg, #FFD700, #FFC107); -webkit-background-clip: text; background-clip: text; color: transparent;">Chandan Kumar</h1>
+    <h2 style="font-weight: 500; color: #ddd; margin-top: 8px;">3D Developer & Creative Technologist</h2>
+    <p style="color: #aaa; max-width: 550px; margin: 15px auto;"><em>Where code meets creativity in three dimensions</em></p>
 
-[![Live Demo](https://img.shields.io/badge/◉_LIVE_DEMO-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000)](https://chandan404.netlify.app)
-[![GitHub](https://img.shields.io/badge/⭐_STAR_ON_GITHUB-000000?style=for-the-badge&logo=github&logoColor=FFD700)](https://github.com/Dev-Chandan404/3d-portfolio)
-[![Issues](https://img.shields.io/badge/🐛_REPORT_BUG-000000?style=for-the-badge&logo=bugsnag&logoColor=FFD700)](https://github.com/Dev-Chandan404/3d-portfolio/issues)
+    <div style="width: 60px; height: 1px; background: rgba(255,215,0,0.25); margin: 20px auto;"></div>
 
-<br/>
+    <!-- Action badges -->
+    <p align="center">
+      <a href="https://chandan404.netlify.app" style="display: inline-block; margin: 0 6px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0px)';"><img src="https://img.shields.io/badge/Live_Demo-000000?style=for-the-badge&logo=netlify&logoColor=FFD700&labelColor=000000" /></a>
+      <a href="https://github.com/Dev-Chandan404/3d-portfolio" style="display: inline-block; margin: 0 6px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0px)';"><img src="https://img.shields.io/badge/Star_on_GitHub-000000?style=for-the-badge&logo=github&logoColor=FFD700&labelColor=000000" /></a>
+      <a href="https://github.com/Dev-Chandan404/3d-portfolio/issues" style="display: inline-block; margin: 0 6px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0px)';"><img src="https://img.shields.io/badge/Report_Bug-000000?style=for-the-badge&logo=bugsnag&logoColor=FFD700&labelColor=000000" /></a>
+    </p>
 
-![React](https://img.shields.io/badge/⚛_React_18-000?style=for-the-badge&logo=react&logoColor=FFD700)
-![Three.js](https://img.shields.io/badge/🎮_Three.js-000?style=for-the-badge&logo=threedotjs&logoColor=FFD700)
-![Tailwind](https://img.shields.io/badge/💎_Tailwind_CSS-000?style=for-the-badge&logo=tailwindcss&logoColor=FFD700)
-![GSAP](https://img.shields.io/badge/✦_GSAP-000?style=for-the-badge&logo=greensock&logoColor=FFD700)
-![Vite](https://img.shields.io/badge/⚡_Vite-000?style=for-the-badge&logo=vite&logoColor=FFD700)
+    <!-- Tech stack badges (flat style for cleanliness) -->
+    <p align="center" style="margin: 20px 0 10px;">
+      <img src="https://img.shields.io/badge/React-18-000000?style=flat-square&logo=react&logoColor=FFD700&labelColor=000000" />
+      <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=FFD700&labelColor=000000" />
+      <img src="https://img.shields.io/badge/Tailwind_CSS-000000?style=flat-square&logo=tailwindcss&logoColor=FFD700&labelColor=000000" />
+      <img src="https://img.shields.io/badge/GSAP-000000?style=flat-square&logo=greensock&logoColor=FFD700&labelColor=000000" />
+      <img src="https://img.shields.io/badge/Vite-000000?style=flat-square&logo=vite&logoColor=FFD700&labelColor=000000" />
+    </p>
 
-<br/>
+    <p align="center">
+      <img src="https://img.shields.io/badge/Deployed_on-Netlify-000000?style=flat-square&logo=netlify&logoColor=FFD700&labelColor=000000" />
+      <img src="https://img.shields.io/badge/License-MIT-000000?style=flat-square&logo=opensourceinitiative&logoColor=FFD700&labelColor=000000" />
+    </p>
 
-[![Portfolio Preview](https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png)](https://chandan404.netlify.app)
+    <div style="width: 80px; height: 1px; background: rgba(255,215,0,0.2); margin: 25px auto;"></div>
 
-*✦ Enter the dimension — live at **[chandan404.netlify.app](https://chandan404.netlify.app)** ✦*
+    <!-- Portfolio screenshot -->
+    <p align="center">
+      <img src="https://raw.githubusercontent.com/Dev-Chandan404/3d-portfolio/main/public/images/portfolio.png" alt="Portfolio Preview" width="85%" style="border-radius: 20px; border: 1px solid rgba(255,215,0,0.3); box-shadow: 0 8px 20px rgba(0,0,0,0.4); transition: all 0.2s;" onmouseover="this.style.transform='scale(1.01)';this.style.boxShadow='0 12px 28px rgba(0,0,0,0.5), 0 0 0 2px rgba(255,215,0,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.4)'" />
+      <br/>
+      <span style="color: #FFD700; font-size: 0.85rem;">✦ Interactive 3D Experience ✦</span>
+    </p>
+
+  </div>
+</div>
 
 </div>
 
 ---
 
-<div align="center">
+## 📖 Table of Contents
 
-```
-┌─────────────────────────────────────────────────────┐
-│                  TABLE OF CONTENTS                  │
-│  ┌───────┐  ┌───────┐  ┌───────┐  ┌───────┐        │
-│  │ About │  │Featur │  │ Stack │  │ Start │  · · ·  │
-│  └───────┘  └───────┘  └───────┘  └───────┘        │
-└─────────────────────────────────────────────────────┘
-```
-
-</div>
-
-[✦ About](#-about-the-project) · [🎯 Features](#-key-features) · [🛠️ Stack](#%EF%B8%8F-built-with) · [📂 Sections](#-portfolio-sections) · [🚀 Get Started](#-getting-started) · [📁 Structure](#-project-structure) · [🌍 Deploy](#-deployment) · [🤝 Connect](#%EF%B8%8F-lets-connect)
+- [✨ About The Project](#-about-the-project)
+- [🎯 Key Features](#-key-features)
+- [🛠️ Built With](#️-built-with)
+- [📂 Portfolio Sections](#-portfolio-sections)
+- [🚀 Getting Started](#-getting-started)
+- [🔨 Available Scripts](#-available-scripts)
+- [🌍 Deployment](#-deployment)
+- [📁 Project Structure](#-project-structure)
+- [📄 License](#-license)
+- [🙋‍♂️ Let's Connect](#️-lets-connect)
+- [💖 Support](#-support)
 
 ---
 
-## ✦ About The Project
+## ✨ About The Project
 
-<div align="center">
+> A cutting-edge **3D interactive portfolio** that goes beyond the ordinary. Built with the latest web technologies to deliver a stunning visual experience.
 
-```
-         ╱|、
-       (˚ˎ 。7     "Not just a portfolio.
-        |、˜〵      A world you step into."
-        じしˍ,)ノ
-```
+This portfolio combines **Three.js 3D graphics**, **GSAP animations**, and **React's component architecture** to create an immersive journey. Every scroll, hover, and click is crafted to leave a lasting impression.
 
-</div>
-
-> **A cutting-edge 3D interactive portfolio** that pushes the browser to its limits. Built with the latest web technologies to deliver a cinematic visual experience — every scroll, hover, and click choreographed to leave a lasting impression.
-
-This portfolio fuses **Three.js 3D graphics**, **GSAP scroll animations**, and **React's architecture** into an immersive journey through my work and skills. It isn't just a website — it's a dimension.
-
-```
- ┌──────────────────────────────────────────────────┐
- │  Interactive 3D  ·  Scroll-driven Narrative      │
- │  Blazing Fast    ·  Fully Responsive             │
- │  Dark & Slick    ·  Zero Compromise on UX        │
- └──────────────────────────────────────────────────┘
-```
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=500&color=FFD700&center=true&vCenter=true&width=450&lines=Interactive+3D;Smooth+Animations;Fully+Responsive;Blazing+Fast" alt="Typing SVG" />
+</p>
 
 ---
 
@@ -87,14 +91,14 @@ This portfolio fuses **Three.js 3D graphics**, **GSAP scroll animations**, and *
 
 <div align="center">
 
-| ◈ | Feature | Description |
-|:---:|:---|:---|
-| 🎮 | **Interactive 3D Scenes** | Three.js + React Three Fiber — real-time 3D rendered in the browser |
-| 🎬 | **GSAP Animations** | Buttery-smooth scroll-triggered cinematic transitions |
-| 📱 | **Fully Responsive** | Pixel-perfect on mobile, tablet, and desktop |
-| ⚡ | **Blazing Fast** | Vite-optimized build with aggressive code-splitting |
-| 🎨 | **Modern UI/UX** | Tailwind CSS with a sleek, dark immersive aesthetic |
-| 🌙 | **Dark Dimension** | A bold dark theme that makes 3D visuals truly pop |
+| Feature | Description |
+|---------|-------------|
+| 🎮 **Interactive 3D** | Three.js + React Three Fiber |
+| 🎬 **GSAP Animations** | Buttery smooth scroll‑triggered effects |
+| 📱 **Fully Responsive** | Mobile, tablet, desktop ready |
+| ⚡ **Blazing Fast** | Vite optimized builds |
+| 🎨 **Modern UI** | Tailwind CSS styling |
+| 🌙 **Dark Theme** | Sleek dark aesthetic throughout |
 
 </div>
 
@@ -104,28 +108,9 @@ This portfolio fuses **Three.js 3D graphics**, **GSAP scroll animations**, and *
 
 <div align="center">
 
-```
-  ╔═══════════╗    ╔═══════════╗    ╔═══════════╗
-  ║           ║    ║           ║    ║           ║
-  ║  React 18 ║    ║ Three.js  ║    ║   GSAP    ║
-  ║  ⚛ Core  ║    ║ 🎮 3D     ║    ║ ✦ Anim.  ║
-  ╚═══════════╝    ╚═══════════╝    ╚═══════════╝
-        ╔═══════════╗    ╔═══════════╗
-        ║           ║    ║           ║
-        ║ Tailwind  ║    ║   Vite    ║
-        ║ 💎 Style  ║    ║ ⚡ Build  ║
-        ╚═══════════╝    ╚═══════════╝
-```
-
-| Technology | Purpose | Version |
-|:---|:---|:---:|
-| **React** | UI component architecture | 18+ |
-| **Three.js** | WebGL 3D rendering engine | latest |
-| **React Three Fiber** | React renderer for Three.js | latest |
-| **GSAP** | Professional-grade animation library | latest |
-| **Tailwind CSS** | Utility-first styling | latest |
-| **Vite** | Lightning-fast build tooling | latest |
-| **Netlify** | Deployment & hosting | — |
+| React | Three.js | Tailwind | GSAP | Vite | JavaScript | Netlify |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="50" height="50" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" width="50" height="50" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="50" height="50" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"/> | <img src="https://cdn.simpleicons.org/gsap/88CE02" width="50" height="50" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="50" height="50" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" height="50" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" width="50" height="50" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"/> |
 
 </div>
 
@@ -133,27 +118,13 @@ This portfolio fuses **Three.js 3D graphics**, **GSAP scroll animations**, and *
 
 ## 📂 Portfolio Sections
 
-<div align="center">
-
-```
-  ┌─────────────────────────────────────────────────────────┐
-  │                                                         │
-  │   [HERO] ──► [ABOUT] ──► [SKILLS] ──► [PROJECTS]       │
-  │      ↑                                    │             │
-  │      └─────── [CONTACT] ◄─────────────────┘             │
-  │                                                         │
-  └─────────────────────────────────────────────────────────┘
-```
-
-</div>
-
-| ◈ | Section | What you'll find |
-|:---:|:---|:---|
-| 🏠 | **Hero** | Stunning 3D animated intro with immersive camera movement |
-| 👨‍💻 | **About** | My story, background, and what drives me to build |
-| 🛠️ | **Skills** | Technologies, tools, and frameworks I work with |
-| 🚀 | **Projects** | Featured work, case studies, and live demos |
-| 📬 | **Contact** | Let's connect and build something extraordinary |
+| Section | Description |
+|:---:|:---|
+| 🏠 **Hero** | Stunning 3D animated introduction |
+| 👨‍💻 **About** | My story, background & passion |
+| 🛠️ **Skills** | Technologies & tools I master |
+| 🚀 **Projects** | Featured work & case studies |
+| 📬 **Contact** | Let's connect & collaborate |
 
 ---
 
@@ -161,124 +132,21 @@ This portfolio fuses **Three.js 3D graphics**, **GSAP scroll animations**, and *
 
 ### Prerequisites
 
-```
-◈  Node.js  >= 18.0.0
-◈  npm      >= 9.0.0  (or yarn / pnpm)
-◈  Git
-```
+- **Node.js** >= 18.0.0
+- **npm** >= 9.0.0 or **yarn**
+- **Git**
 
 ### ⚡ Quick Start
 
 ```bash
-# ① Clone the repository
+# Clone the repository
 git clone https://github.com/Dev-Chandan404/3d-portfolio.git
 
-# ② Step inside
+# Enter the project directory
 cd 3d-portfolio
 
-# ③ Install dependencies
+# Install dependencies
 npm install
 
-# ④ Launch the dev server
+# Start the development server
 npm run dev
-```
-
-Then open **[http://localhost:5173](http://localhost:5173)** and step into the dimension.
-
----
-
-## 🔨 Available Scripts
-
-| Command | Action |
-|:---|:---|
-| `npm run dev` | Start development server with HMR |
-| `npm run build` | Build optimized production bundle |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Lint the codebase |
-
----
-
-## 📁 Project Structure
-
-```
-3d-portfolio/
-│
-├── public/
-│   └── images/              ◈ Static assets & previews
-│
-├── src/
-│   ├── components/          ◈ Reusable UI components
-│   ├── sections/            ◈ Hero, About, Skills, Projects, Contact
-│   ├── models/              ◈ Three.js 3D model loaders
-│   ├── hooks/               ◈ Custom React hooks
-│   ├── utils/               ◈ Helper functions & constants
-│   ├── App.jsx              ◈ Root component
-│   └── main.jsx             ◈ Entry point
-│
-├── index.html
-├── tailwind.config.js
-├── vite.config.js
-└── package.json
-```
-
----
-
-## 🌍 Deployment
-
-This portfolio is deployed on **[Netlify](https://netlify.com)** with continuous deployment from the `main` branch.
-
-```bash
-# Build for production
-npm run build
-
-# Deploy (dist/ folder) to your hosting of choice
-# Netlify auto-deploys on push to main ✓
-```
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Dev-Chandan404/3d-portfolio)
-
----
-
-## 📄 License
-
-Distributed under the **MIT License** — see [`LICENSE`](./LICENSE) for details.
-
----
-
-## 🙋‍♂️ Let's Connect
-
-<div align="center">
-
-```
-  ╔══════════════════════════════════════╗
-  ║   Have a project in mind?           ║
-  ║   Want to collaborate?              ║
-  ║   Just want to say hi?              ║
-  ║                                     ║
-  ║   → chandan404.netlify.app          ║
-  ╚══════════════════════════════════════╝
-```
-
-[![Portfolio](https://img.shields.io/badge/◉_Portfolio-000?style=for-the-badge&logo=netlify&logoColor=FFD700)](https://chandan404.netlify.app)
-[![GitHub](https://img.shields.io/badge/◈_GitHub-000?style=for-the-badge&logo=github&logoColor=FFD700)](https://github.com/Dev-Chandan404)
-
-</div>
-
----
-
-## 💖 Support
-
-If this project inspired you or helped you in any way, consider giving it a **⭐ star** on GitHub — it means the world and helps others discover it.
-
-<div align="center">
-
-```
-      *    .  *       .         *    .
-   .    *        .       *  .       .
-      .    ✦ Thanks for visiting ✦    .
-   *     .    *     .    *      .   *
-```
-
-*Built with passion by **[Chandan Kumar](https://chandan404.netlify.app)** — pushing the web into the third dimension.*
-
-</div>
