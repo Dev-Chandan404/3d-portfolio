@@ -162,42 +162,90 @@ text
 ````
 📄 License
 Distributed under the MIT License. See the LICENSE file for more information.
-<!-- ========== FOOTER ========== -->
+<!-- ========== ULTRA PREMIUM GOLDEN & BLACK FOOTER (CLEAN) ========== -->
 <br/>
 <div align="center">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <div style="
+    display: inline-block;
+    width: 90%;
+    max-width: 880px;
+    padding: 40px 30px;
+    background: radial-gradient(circle at 20% 30%, #0a0a0a, #050505);
+    border-radius: 60px;
+    border: 1px solid rgba(255, 215, 0, 0.6);
+    box-shadow: 
+      0 30px 50px rgba(0, 0, 0, 0.7),
+      0 0 0 2px rgba(0, 0, 0, 0.9) inset,
+      0 0 0 4px rgba(255, 215, 0, 0.2) inset,
+      0 0 30px rgba(255, 215, 0, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+  ">
+    ```
+    <!-- Decorative corners -->
+    <div style="position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; border-top: 2px solid #FFD700; border-left: 2px solid #FFD700; border-radius: 8px 0 0 0;"></div>
+    <div style="position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-top: 2px solid #FFD700; border-right: 2px solid #FFD700; border-radius: 0 8px 0 0;"></div>
+    <div style="position: absolute; bottom: 20px; left: 20px; width: 40px; height: 40px; border-bottom: 2px solid #FFD700; border-left: 2px solid #FFD700; border-radius: 0 0 0 8px;"></div>
+    <div style="position: absolute; bottom: 20px; right: 20px; width: 40px; height: 40px; border-bottom: 2px solid #FFD700; border-right: 2px solid #FFD700; border-radius: 0 0 8px 0;"></div>
+```
+    <!-- Center emblem -->
+    <div style="margin-bottom: 15px; font-size: 2rem; animation: pulse 2s infinite; font-family: 'Montserrat', sans-serif;">✦</div>
+```
+    <style>
+      @keyframes pulse {
+        0% { opacity: 0.6; text-shadow: 0 0 0px #FFD700; }
+        50% { opacity: 1; text-shadow: 0 0 8px #FFD700; }
+        100% { opacity: 0.6; text-shadow: 0 0 0px #FFD700; }
+      }
+      @keyframes shimmer {
+        0% { background-position: -100% 0; }
+        100% { background-position: 200% 0; }
+      }
+    </style>
+```
+    <!-- License -->
+    <div style="margin-bottom: 30px;">
+      <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; font-weight: 700; background: linear-gradient(135deg, #FFD700, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">✦ LICENSE ✦</div>
+      <img src="https://img.shields.io/badge/MIT%20License-000000?style=for-the-badge&logo=opensourceinitiative&logoColor=FFD700&labelColor=000000&color=FFD700" style="border-radius: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.5);" />
+    </div>
+```
+    <!-- Shimmer divider -->
+    <div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, #FFD700, #FFC107, #FF8C00, #FFD700, transparent); background-size: 200% auto; margin: 20px auto; border-radius: 2px; animation: shimmer 3s linear infinite;"></div>
+```
+    <!-- Connect -->
+    <div style="margin-bottom: 30px;">
+      <div style="font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 20px; letter-spacing: 2px; font-family: 'Montserrat', sans-serif;">✦ CONNECT ✦</div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+        <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Gmail-C0392B?style=for-the-badge&logo=gmail&logoColor=white&labelColor=000000" /></a>
+        <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=FFD700&labelColor=000000" /></a>
+        <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FFD700?style=for-the-badge&logo=react&logoColor=000000&labelColor=000000&color=FFD700" /></a>
+        <a href="https://www.linkedin.com/in/chandan-kumar-404"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=000000" /></a>
+        <a href="https://twitter.com/DevChandan404"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&labelColor=000000" /></a>
+      </div>
+    </div>
+```
+    <!-- Second shimmer divider -->
+    <div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, #FFD700, #FFC107, #FF8C00, #FFD700, transparent); background-size: 200% auto; margin: 20px auto; border-radius: 2px; animation: shimmer 3s linear infinite;"></div>
+```
+    <!-- Support -->
+    <div style="margin-bottom: 30px;">
+      <div style="font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #FFC107, #FFD700, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 12px; font-family: 'Montserrat', sans-serif;">✦ SUPPORT ✦</div>
+      <p style="color: #cccccc; font-size: 1rem; margin: 10px 0; font-family: 'Inter', sans-serif;">✨ <strong style="color: #FFD700;">If this project inspires you, please ⭐ star the repository</strong> ✨</p>
+      <div style="margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+        <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-Dev--Chandan404-000000?style=flat-square&logo=github&logoColor=FFD700&labelColor=000000" /></a>
+        <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Email-chandankumar404%40gmail.com-C0392B?style=flat-square&logo=gmail&logoColor=white&labelColor=000000" /></a>
+        <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-chandan404.netlify.app-FFD700?style=flat-square&logo=react&logoColor=000000&labelColor=000000" /></a>
+        <img src="https://img.shields.io/badge/⭐-Thank%20You-FFD700?style=flat-square&logo=heart&logoColor=000000&labelColor=000000" />
+      </div>
+    </div>
+```
+    <!-- Visitor Badge – that's the end -->
+    <div style="margin-top: 20px;">
+      <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="Visitor Count" style="border-radius: 25px; filter: drop-shadow(0 0 6px #FFD700);" />
+    </div>
 
-### 📄 License
-<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" />
-
-<br/>
-
-### 🙋‍♂️ Let's Connect
-
-<p align="center">
-  <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=react&logoColor=white" /></a>
-  <a href="https://www.linkedin.com/in/chandan-kumar-404"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="https://twitter.com/DevChandan404"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a>
-</p>
-
-<br/>
-
-### 💖 Support
-
-> **If you like this project, please ⭐ star the repository and share it with others!**
-
-<p align="center">
-  <a href="https://github.com/Dev-Chandan404"><img src="https://img.shields.io/badge/GitHub-Dev--Chandan404-181717?style=flat-square&logo=github" /></a>
-  <a href="mailto:chandankumar404@gmail.com"><img src="https://img.shields.io/badge/Email-chandankumar404%40gmail.com-D14836?style=flat-square&logo=gmail" /></a>
-  <a href="https://chandan404.netlify.app"><img src="https://img.shields.io/badge/Portfolio-chandan404.netlify.app-FF5722?style=flat-square&logo=react" /></a>
-  <img src="https://img.shields.io/badge/⭐-Thank%20you%20for%20visiting-4CAF50?style=flat-square" />
-</p>
-
-<br/>
-
-<p align="center">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=Dev-Chandan404.3d-portfolio" alt="Visitor Count" />
-</p>
-
+  </div>
 </div>
