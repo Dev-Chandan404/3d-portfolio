@@ -99,7 +99,7 @@ This portfolio combines the power of **Three.js 3D graphics**, **GSAP animations
 | React | Three.js | Tailwind | GSAP | Vite | JavaScript | Netlify |
 |-------|----------|----------|------|------|------------|---------|
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/threejs/threejs-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/greensock/greensock-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="50" height="50"/> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg" width="50" height="50"/> |
-
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/greensock/greensock-original.svg" width="50" height="50" /> | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="50" height="50" />
 </div>
 
 ---
