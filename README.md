@@ -42,7 +42,7 @@
 </p>
 
 </div>
-````
+
 <style>
   @keyframes goldPulse {
     0% { text-shadow: 0 0 0px #FFD700; opacity: 0.6; }
@@ -59,7 +59,7 @@
   }
 </style>
 
----
+
 
 ## 📖 Table of Contents
 - [✨ About The Project](#-about-the-project)
