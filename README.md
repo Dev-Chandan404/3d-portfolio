@@ -2,9 +2,9 @@
 
 <!-- Animated gold title with sparkles -->
 <h1>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="35" height="35" style="animation: goldPulse 2.5s infinite;" />
+  <span style="display: inline-block; color: #FFD700; text-shadow: 0 0 4px #FFD700;">✦</span>
   <span style="background: linear-gradient(135deg, #FFD700, #FFC107, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800;">Chandan Kumar — 3D Developer Portfolio</span>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Sparkles.png" width="35" height="35" style="animation: goldPulse 2.5s infinite;" />
+  <span style="display: inline-block; color: #FFD700; text-shadow: 0 0 4px #FFD700;">✦</span>
 </h1>
 
 ### *Where Code Meets Creativity in Three Dimensions*
