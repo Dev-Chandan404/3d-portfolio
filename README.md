@@ -1,164 +1,177 @@
-<div align="center">
+# ██████╗  ██████╗      ██████╗ ██████╗
 
-# ✦ 3D Portfolio — Chandan
+# ╚════██╗██╔═══██╗    ██╔════╝██╔═══██╗
 
-**A visually immersive personal portfolio built with React, Three.js & modern web technologies.**
+# █████╔╝██║   ██║    ██║     ██║   ██║
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-chandan404.netlify.app-brightgreen?style=for-the-badge&logo=netlify)](https://chandan404.netlify.app/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Three.js](https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+# ██╔═══╝ ██║   ██║    ██║     ██║   ██║
 
-</div>
+# ███████╗╚██████╔╝    ╚██████╗╚██████╔╝
 
----
+# ╚══════╝ ╚═════╝      ╚═════╝ ╚═════╝
 
-## 🌐 Live Preview
-
-> **[https://chandan404.netlify.app/](https://chandan404.netlify.app/)**
-
----
-
-## ✨ Features
-
-- 🎨 **Interactive 3D Scenes** — Animated 3D models and environments using Three.js & React Three Fiber
-- 🚀 **Smooth Animations** — Fluid transitions and scroll-driven effects powered by Framer Motion
-- 📱 **Fully Responsive** — Optimized for all screen sizes, from mobile to desktop
-- 🌙 **Modern UI/UX** — Clean, dark-themed design with immersive visual storytelling
-- 📬 **Contact Form** — Functional email integration via EmailJS
-- ⚡ **Blazing Fast** — Built with Vite for lightning-fast dev experience and optimized production builds
-
----
-
-## 🛠️ Tech Stack
-
-| Category | Technology |
-|---|---|
-| Frontend Framework | React.js |
-| 3D Graphics | Three.js, React Three Fiber, @react-three/drei |
-| Animations | Framer Motion |
-| Styling | Tailwind CSS |
-| Build Tool | Vite |
-| Email | EmailJS |
-| Deployment | Netlify |
-
----
-
-## 📂 Project Structure
-
+```txt
+> SYSTEM: 3D_PORTFOLIO_OS
+> MODE  : IMMERSIVE INTERFACE
+> CORE  : THREE.JS ENGINE
 ```
+
+---
+
+## ◉ ENTER THE EXPERIENCE
+
+```txt
+╔══════════════════════════════════════════════╗
+║   ▶ LAUNCH 3D WORLD                         ║
+║   https://chandan404.netlify.app/           ║
+╚══════════════════════════════════════════════╝
+```
+
+> this repository is not just code
+> it is a **gateway to a rendered environment**
+
+---
+
+## ◉ VISUAL CORE (3D ENGINE)
+
+```txt
+        camera
+          ▲
+          │
+     ┌────┼────┐
+     │   scene  │
+     └────┼────┘
+          │
+     ┌────▼────┐
+     │ renderer│
+     └─────────┘
+```
+
+Powered by:
+
+```txt
+> WebGL
+> Three.js
+> GPU rendering pipeline
+> Perspective camera
+> Lighting + materials
+```
+
+---
+
+## ◉ SYSTEM FEATURES
+
+```txt
+[+] real-time 3D rendering
+[+] depth-based UI
+[+] smooth camera transitions
+[+] interactive elements
+[+] immersive navigation
+[+] minimal + futuristic design
+```
+
+---
+
+## ◉ CODE STRUCTURE
+
+```txt
 3d-portfolio/
-├── public/
-│   └── assets/          # Static assets (models, textures, icons)
-├── src/
-│   ├── assets/          # Images and media
-│   ├── components/      # Reusable UI components
-│   ├── constants/       # Data constants (skills, projects, experience)
-│   ├── hoc/             # Higher Order Components
-│   ├── utils/           # Utility functions
-│   ├── App.jsx
-│   └── main.jsx
-├── .env.example
-├── index.html
-├── tailwind.config.js
-└── vite.config.js
+│
+├── index.html        :: entry point
+├── style.css         :: UI layer
+├── script.js         :: logic / interactions
+├── assets/
+│   ├── textures/
+│   ├── models/
+│   └── environment/
+└── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## ◉ THREE.JS CORE SNIPPET
 
-### Prerequisites
+```js
+import * as THREE from 'three';
 
-Make sure you have the following installed:
-- [Node.js](https://nodejs.org/) (v18+)
-- npm or yarn
+const scene = new THREE.Scene();
 
-### Installation
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/Dev-Chandan404/3d-portfolio.git
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
 
-# 2. Navigate into the project
-cd 3d-portfolio
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshStandardMaterial({ color: 0x111111 });
+const cube = new THREE.Mesh(geometry, material);
 
-# 3. Install dependencies
-npm install
+scene.add(cube);
 
-# 4. Start the development server
-npm run dev
+camera.position.z = 3;
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+
+  renderer.render(scene, camera);
+}
+
+animate();
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
 ---
 
-## 🔧 Environment Variables
+## ◉ EXPERIENCE PHILOSOPHY
 
-Create a `.env` file in the root directory and add your EmailJS credentials:
+```txt
+> traditional portfolio = flat page
 
-```env
-VITE_APP_EMAILJS_SERVICE_ID=your_service_id
-VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
+> this project =
+  a spatial interface
+  a navigable identity
+  a rendered presence
 ```
 
-You can get these values by signing up at [EmailJS](https://www.emailjs.com/).
-
 ---
 
-## 🧪 Available Scripts
+## ◉ UPGRADE PATH
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint |
-
----
-
-## 🎨 Customization
-
-To adapt this portfolio to your own profile:
-
-1. **Personal Info** — Update your name, bio, and social links in `src/constants/index.js`
-2. **Projects** — Add your own projects with descriptions, images, and links
-3. **Skills** — Edit the skills/technologies section in the constants file
-4. **Work Experience** — Update your timeline/experience entries
-5. **3D Models** — Swap out models in `public/` with your own `.glb` / `.gltf` files
-
----
-
-## 📦 Deployment
-
-This project is deployed on **Netlify**. To deploy your own:
-
-```bash
-npm run build
+```txt
+[ ] add GLTF models
+[ ] environment lighting (HDRI)
+[ ] scroll-controlled camera
+[ ] shader effects (GLSL)
+[ ] physics (cannon.js)
 ```
 
-Then drag and drop the `dist/` folder into [Netlify Drop](https://app.netlify.com/drop), or connect your GitHub repo for continuous deployment.
+---
+
+## ◉ AUTHOR NODE
+
+```txt
+user   :: Chandan
+repo   :: github.com/Dev-Chandan404
+world  :: chandan404.netlify.app
+```
 
 ---
 
-## 📄 License
+## ◉ FINAL STATE
 
-This project is open source and available under the [MIT License](LICENSE).
+```txt
+> initializing scene...
+> loading identity...
+> rendering developer...
 
----
-
-## 🤝 Contact
-
-**Dev Chandan** — Frontend Developer
-
-[![GitHub](https://img.shields.io/badge/GitHub-Dev--Chandan404-181717?style=flat&logo=github)](https://github.com/Dev-Chandan404)
-[![Portfolio](https://img.shields.io/badge/Portfolio-chandan404.netlify.app-brightgreen?style=flat&logo=netlify)](https://chandan404.netlify.app/)
+[ OK ]
+```
 
 ---
-
-<div align="center">
-  <sub>Built with ❤️ and lots of ☕</sub>
-</div>
