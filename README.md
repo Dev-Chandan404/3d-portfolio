@@ -1,348 +1,414 @@
-# 3D Portfolio – Immersive Three.js Experience  
+# Executive Summary  
+We propose transforming **Dev-Chandan404’s portfolio** into a fully interactive, immersive 3D web experience powered by Three.js. The new interface will leverage Three.js (latest r152+) and modern web technologies to replace static content with rich 3D scenes, intuitive camera navigation, and integrated UI elements. The design will follow core UX principles: clarity, accessibility, and performance. Key deliverables include a modular architecture (scene manager, entity classes, asset loaders), an asset pipeline (glTF models with Draco/KTX2 compression, HDRI lighting), interactive flows (scroll-driven camera paths, click/hover actions), and responsive/fallback UI (HTML/CSS overlays, CSS3DRenderer). We recommend tech such as React-Three-Fiber vs vanilla Three.js, OrbitControls, DRACOLoader/KTX2Loader, postprocessing (EffectComposer or vanruesc’s postprocessing), and physics engines (Cannon-ES or Rapier). Performance targets include ≤100 draw calls and minimal VRAM (estimate via per-pixel budget【18†L424-L432】【37†L525-L533】). Security and CI/CD (GitHub Actions to Netlify/Vercel, with CDN for assets) are also covered. A phased roadmap (prototype → features → polish) and an MVP checklist conclude the plan.  
 
-Experience an interactive 3D developer portfolio that *feels like a world*. This README serves as a guide to a **Three.js-powered** portfolio site (live at [chandan404.netlify.app](https://chandan404.netlify.app)), showing how to present its 3D visuals, animations, and deployment on GitHub. It includes a summary of features and tech, an animated GIF hero demo (with specs), badges (Live site, Netlify, Three.js, license), code snippets for setup and animation, and guidance on performance & accessibility. Citations are provided from official Three.js and Netlify docs, best-practice sources, and relevant tutorials to ensure accuracy【32†L1-L4】【37†L133-L141】.
+# Project Goals and UX Principles  
+- **Immersion & Engagement:** Present projects via 3D scenes that users can freely explore, boosting engagement. Use **intuitive navigation** (e.g. orbit camera, easy controls) to lower the learning curve【73†L6-L14】. 
+- **Clarity & Information:** Despite the 3D visuals, the interface must communicate content clearly. Overlay UI (HTML/CSS panels or CSS3DRenderer objects) will display project info and navigation cues without obscuring the scene. 
+- **Responsiveness:** The experience must adapt to desktop, tablet, and mobile. Controls should detect pointer vs touch vs keyboard vs gamepad, with graceful fallbacks. 
+- **Accessibility:** Provide alternative pathways (ARIA labels, descriptions, keyboard navigation) so that assistive technologies can perceive content【22†L97-L104】【22†L113-L117】. For example, the `<canvas>` will get an `aria-label` and dynamic text updates【22†L97-L104】【22†L113-L117】.
+- **Performance First:** Optimize for target hardware by budgeting textures, draw calls, etc. Use techniques like LOD models, GPU instancing, and compressed assets (Draco, KTX2) to maintain ~60fps【18†L440-L448】【37†L438-L446】. 
+- **Iterative Usability:** Start with a simple prototype (one scene, basic camera movement) and progressively add complexity. User feedback and testing on multiple devices will guide refinements.
 
----
+# Recommended Tech Stack  
 
-## 📽️ Hero – Animated Preview  
+- **Three.js (r152 or latest):** Core WebGL library for 3D scene, camera, lights, shaders and rendering【4†L378-L387】.  
+- **Framework/Bindings:** 
+  - *Option A – Vanilla Three.js:* Direct use of Three.js with ES modules and three-stdlib (npm package of examples) for utilities like `OrbitControls`, `GLTFLoader`, `EffectComposer`, etc. Keeps footprint lean and avoids React overhead.  
+  - *Option B – React-Three-Fiber (R3F):* If the site is React-based, R3F provides a declarative JSX layer on Three.js. Pros: component model, React state/context integration. Cons: learning curve, slightly larger bundle.  
+- **Loaders:**  
+  - **GLTFLoader (Three.js):** for glTF/GLB models【36†L42-L49】. Set up with Draco (`DRACOLoader`) and KTX2 (`KTX2Loader`) decoders for compressed assets【36†L42-L49】【37†L438-L446】. Use `.loadAsync(url)` to load models and then `scene.add(gltf.scene)`.  
+  - **TextureLoader / CubeTextureLoader:** for JPG/PNG textures and environment maps. Convert HDRI to cubemaps using `PMREMGenerator` for correct PBR lighting【39†L67-L74】.  
+- **Shaders and Effects:**  
+  - **EffectComposer (three-stdlib)** or *postprocessing library* (vanruesc’s [postprocessing](https://github.com/vanruesc/postprocessing)). These manage post-effects like bloom, depth-of-field, etc【4†L384-L392】【70†L13-L21】. For example, use `new UnrealBloomPass()` or `GlitchPass` as needed.  
+  - **Shader Libraries:** glsl-noise, glsl-fast-gaussian-blur, etc., for custom effects (e.g. interactive ripples).  
+- **Controls & UI:**  
+  - **OrbitControls / PointerLockControls:** for mouse/touch navigation. For example, `new OrbitControls(camera, renderer.domElement)` to allow rotate/zoom/pan【73†L6-L14】【73†L17-L24】.  
+  - **UI Panels:** `lil-gui` (modern drop-in replacement for dat.GUI)【68†L23-L32】 for development/debug UI if needed. For production UI, use HTML/CSS overlay (e.g. DOM panel or libraries like [leva](https://github.com/pmndrs/leva) for React).  
+  - **CSS3DRenderer:** to place live HTML elements (menus, text) into 3D space【34†L4-L8】. This allows, for example, HTML buttons that float in the scene, staying crisp.  
+- **Physics (if needed):**  
+  - **Cannon-ES:** JavaScript physics (easy to use, many examples) but slower and less maintained.  
+  - **Ammo.js:** Full Bullet physics port; heavier, longer load but very capable.  
+  - **Rapier (Rust/WASM):** High-performance physics (via wasm), increasingly popular. If adding physics (e.g. colliding objects, ragdolls), Rapier offers best speed at cost of large WASM file.  
+- **State Management:**  
+  - If using React, use React Context or Zustand/Redux for global state (selected project, UI flags, etc.).  
+  - In vanilla, use well-structured classes/modules. The **SceneManager** approach【29†L76-L84】【29†L88-L96】 is recommended: one high-level manager handles Three.js initialization and update loop, while “SceneSubjects” (entities) encapsulate each object’s logic. This decouples DOM from 3D logic【29†L76-L84】【29†L88-L96】.  
+- **Build Tools:** Vite or Webpack (for ES Modules and dev server), Babel (if older browser support needed). Use npm or yarn for dependencies (three, three-stdlib, loaders).  
 
-<p align="center">  
-<img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="3D Portfolio Preview" width="80%" />  
-</p>  
+# Architecture & File Structure  
 
-*Animated GIF preview (above)* – shows a sample scene with rotating 3D objects and glowing lights. For your own demo GIF, record a short clip (5–10s) of the live portfolio (e.g. using QuickTime or OBS), then use **FFmpeg** to convert and optimize it (reduce frame rate and size)【49†L120-L129】【23†L343-L350】. For example: 
-
-```bash
-# Example FFmpeg command to create a 640px GIF at 12fps from a video
-ffmpeg -ss 0 -i demo.mp4 -r 12 -vf "scale=640:-1" -pix_fmt rgb24 -y preview.gif
-```
-
-This approach (frame rate down to ~12 fps, scaled to 640×360) can cut file size dramatically (from ~30MB to ~2MB in one case【49†L126-L134】). Aim for under **5MB** in total; GitHub limits assets to **10MB**【23†L343-L350】 and smaller GIFs load faster. *Placeholder:* you can use any looping GIF link until you replace it (e.g. `![Demo](https://media.giphy.com/media/W8YY7JvaM2YLe/giphy.gif)`).
-
----
-
-## 🏆 Live Demo & Badges  
-
-[![Live Demo](https://img.shields.io/website?url=https%3A%2F%2Fchandan404.netlify.app&logo=google-chrome)](https://chandan404.netlify.app)  
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_PROJECT_ID/deploy-status)](https://app.netlify.com/sites/YOUR_SITE_NAME/deploys)  [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)  [![three.js](https://img.shields.io/badge/three.js-v0.15-black?logo=three.js&logoColor=white)](https://threejs.org/)  
-
-- **Live Demo:** Click the “Live Demo” badge to open the site (hosted on Netlify).  
-- **Netlify Status:** Reflects the current build/deploy status from Netlify (see docs【37†L133-L141】).  
-- **License:** MIT.  
-- **Three.js:** Uses [Three.js](https://threejs.org/) (v0.15), the WebGL 3D engine【32†L1-L4】.  
-
----
-
-## 🔍 Executive Summary  
-
-A **3D Portfolio** merges web development with interactive graphics. Instead of a static page, the UI has multiple overlapping layers and animated elements, creating a sense of depth and motion. Key points:  
-
-- **Interactive 3D Scene:** The core of the site is a Three.js scene rendered on the page, with models and animations that respond to scrolling or cursor movement (camera pans, rotates)【5†L282-L290】【32†L1-L4】.  
-- **Modern Web UI:** HTML/CSS overlays present text, project cards, and navigation. Smooth CSS3 animations and responsive design ensure it looks good on all devices.  
-- **Showcase Personality:** By using 3D visuals and animations, the portfolio stands out – it’s not just info, it’s an *experience*.  
-
-The result is a portfolio that feels like a lightweight WebGL game, ideal for developers showcasing creativity.
-
----
-
-## 🚀 Features  
-
-- **3D Depth Illusion:** Layered UI elements with CSS `perspective` and 3D transforms give a sense of space. E.g. cards that “float” in front of a background scene.  
-- **Smooth Animations:** Continuous loops (rotating objects, pulsing lights) and transitions (fade-in content, hover effects).  
-- **Responsive Design:** Adapts to mobile/tablet; the 3D canvas resizes (window listeners) and UI rearranges.  
-- **Project Gallery:** Showcases projects with 3D preview images or modals.  
-- **Contact Links:** Social/media icons using subtle animations.  
-- **Dark + Neon Theme:** A sleek dark background with neon accent colors (cyan, magenta) for contrast.  
-
----
-
-## 🔧 Tech Stack  
-
-- **HTML / CSS / JS:** Basic web stack. Semantic HTML5 structure; modern CSS (Flexbox/Grid) for layout plus 3D transforms (`transform: rotateX/translateZ` etc).  
-- **Three.js Engine:** Renders the 3D scene using WebGL (via Three.js v0.15)【32†L1-L4】. We use `PerspectiveCamera`, `WebGLRenderer`, lights (`PointLight`, `AmbientLight`), and simple geometries (e.g. cubes, torus).  
-- **Deployment:** [Netlify](https://netlify.com) – continuous deploy from GitHub.  
-- **Extras:** Shaders (GLSL) for special effects (e.g. water, glow), and optional post-processing (e.g. bloom) as future improvements.  
-
----
-
-## 📂 Project Structure  
+A clear project structure enforces separation of concerns【29†L76-L84】【75†L18-L20】. For example:  
 
 ```
-3d-portfolio/
-│
-├── index.html           # Main HTML file, <canvas> container
-├── style.css            # 3D layout styles (perspective, overlays, colors)
-├── script.js            # JS: initializes Three.js scene + animations
-├── assets/
-│   ├── images/          # Texture maps or UI images (PNG, JPG)
-│   └── models/          # 3D models (GLTF/OBJ) if any
-└── README.md            # This file
-``` 
+/ (project root)
+├ index.html                    # entry page (loads scripts/styles)【75†L18-L20】【75†L46-L49】
+├ styles/
+│   └ main.css                  # basic page & container styles
+├ src/
+│   ├ main.js                   # JS entry point (imports SceneManager)【75†L46-L49】【29†L78-L86】
+│   ├ SceneManager.js           # initializes Renderer, Scene, Camera; holds main loop【29†L175-L184】
+│   ├ SceneSubjects/            # folder for scene entity classes
+│   │   ├ HomeScene.js          # e.g. sets up lights, background, project objects
+│   │   ├ ProjectObject.js      # e.g. 3D model with interactive behavior
+│   │   └ (more entities) 
+│   ├ controls/                 # custom control classes if needed
+│   ├ loaders/                  # custom loaders or wrapper modules (e.g. modelsLoader.js)
+│   └ utils/                    # utility functions (math, lighting setup)
+├ assets/
+│   ├ models/                   # glTF/GLB models
+│   ├ textures/                 # PNG/JPG/KTX2 textures, normal maps
+│   ├ hdr/                      # HDRI environment maps (equirectangular)
+│   └ (misc assets e.g. audio)
+└ package.json  
+```  
 
-The core is **index.html / script.js** – they set up a Three.js scene (scene, camera, lights, renderer), load any models/textures, and start an animation loop (`requestAnimationFrame`)【32†L1-L4】.  
+- **Index.html** contains the canvas container and links to CSS and JS【75†L18-L20】【75†L46-L49】. It should include:  
+  ```html
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <link href="styles/main.css" rel="stylesheet">
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body>
+    <div id="scene-container"></div>
+    <div id="ui-overlay"></div>
+  </body>
+  </html>
+  ```  
+  This matches the Discover Three.js boilerplate, where `main.js` is the module entry【75†L18-L20】【75†L46-L49】.  
+- **SceneManager.js** (or similar) will create a Three.js `Scene`, `WebGLRenderer`, and `Camera`, then load all `SceneSubject` instances. It implements `update()` on each animation frame【29†L175-L184】. The `main.js` script simply instantiates `SceneManager`, binds event listeners, and starts the render loop【29†L175-L184】【29†L159-L168】.  
+- **SceneSubjects**: Each 3D entity (models, lights, interactive objects) gets its own class. This enforces dependency direction: higher-level managers call each subject’s `update()`, but subjects don’t reach out to global state【29†L88-L96】. E.g. a `ProjectCard` class loads its own GLTF model and texture, and handles its hover/selection logic.  
 
----
+【53†embed_image】 *Screenshot: Example code editor (unsplash) illustrating a clean Three.js project structure (index.html loading main.js, modules for scene management, etc.).*  
 
-## 💻 Installation & Running Locally  
+# Interaction Flows & Camera Movement  
 
-1. **Clone the repo:**  
-   ```bash
-   git clone https://github.com/Dev-Chandan404/3d-portfolio.git
-   cd 3d-portfolio
-   ```  
-2. **Open `index.html`:** No build step needed. Simply double-click `index.html` or serve with a simple HTTP server (e.g. `npx serve`) to avoid CORS with textures/models.  
-3. **Interact:** Open the page in browser; you should see the 3D scene and UI.  
+**Scene Layout:** We envision multiple “zones” or views (e.g. Introduction, Projects, About). For each, define a camera path and interactive elements. For example, a scrolling path could fly the camera past different project showcases (as seen on award-winning sites). Alternatively, discrete navigation: clicking “Next” moves to a waypoint.  
 
-*(If using modules or advanced imports, ensure a local server; otherwise linking Three.js via `<script>` is simplest.)*
+**Camera Controls:**  
+- Use `OrbitControls` for free exploration【73†L6-L14】. For dedicated paths, disable user controls and animate the camera manually.  
+- **Scroll-driven Camera:** Listen to `window.onscroll` or use a library like GSAP’s ScrollTrigger. Map scroll position to camera transforms. Example pseudo-code:  
+  ```js
+  window.addEventListener('scroll', () => {
+    const t = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    // For a spline path (THREE.CatmullRomCurve3):
+    const pos = spline.getPointAt(t);
+    camera.position.copy(pos);
+    const lookAtPos = spline.getPointAt(Math.min(t+0.01, 1));
+    camera.lookAt(lookAtPos);
+  });
+  ```  
+- **Pointer/Mouse:** Raycast from the camera on mousemove/click to detect intersected objects (for hover highlighting and clicks). Example:  
+  ```js
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  window.addEventListener('pointermove', e => {
+    pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
+    pointer.y = -(e.clientY / window.innerHeight) * 2 + 1;
+    raycaster.setFromCamera(pointer, camera);
+    const hits = raycaster.intersectObjects(interactiveObjects, true);
+    if (hits[0]) { highlight(hits[0].object); }
+  });
+  ```  
+- **Touch:** OrbitControls support touch for rotate/zoom. For taps, use the same raycasting method. Ensure UI elements are appropriately sized and have touch-friendly hit zones.  
+- **Keyboard:** Bind keys for navigation (e.g. WASD or arrow keys for move/pan). `OrbitControls` can be configured (`controls.keys`【73†L133-L142】). Also allow Escape to exit any modal UI, Tab navigation between HTML UI elements.  
+- **Gamepad:** (Optional) Use the Gamepad API for VR-like navigation (e.g. analog stick controls). This is advanced; as a fallback for desktop, ensure keyboard covers essential navigation.  
 
----
-
-## 💡 Key Code Snippets  
-
-**Three.js Scene Setup:** (ES Module style)
-```js
-import * as THREE from 'https://unpkg.com/three/build/three.module.js';
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-camera.position.z = 5;
+Mermaid workflow (conceptual):  
+```mermaid
+graph LR
+  UserInput-->CameraMove
+  CameraMove-->UpdateScene
+  PointerClick-->UIOverlay
+  UIOverlay-->SceneInteraction
 ```
-This initializes the scene and camera【32†L1-L4】. 
 
-**Animation Loop:**  
-```js
-function animate() {
-  requestAnimationFrame(animate);
-  // example: rotate a cube
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-  renderer.render(scene, camera);
-}
-animate();
-```
-The `requestAnimationFrame` loop ensures smooth 60fps animation (frame rate auto-managed) and updates the canvas.  
+# Accessibility & Responsive Fallbacks  
 
-**Lighting and Materials:**  
-```js
-const light = new THREE.PointLight(0xffffff, 1);
-light.position.set(5, 5, 5);
-scene.add(light);
+Though WebGL is inherently graphical, we must provide alternative experiences:  
 
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshStandardMaterial({ color: 0x00ffdd, metalness: 0.5, roughness: 0.2 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-```
-A basic cube mesh with lighting. Three.js materials (Standard/Physical) give realistic shading【32†L1-L4】. Experiment with `AmbientLight`, `HemisphereLight`, or shaders for effects.
+- **Semantic Canvas:** Add `aria-label` (and `tabindex="0"`) to the `<canvas>` element【22†L97-L104】. For example: `<canvas aria-label="3D interactive portfolio scene" tabindex="0"></canvas>`. This ensures screen readers announce the canvas content. Dynamically update `aria-label` or adjacent `<div>` with text as scene changes (e.g. “Viewing Project A details”)【22†L109-L117】.  
+- **Descriptive Narration:** Provide an optional “Learn More” info button or audio description that reads out key content. For instance, clicking an info icon could open a text panel or speak via SpeechSynthesis describing the current view.  
+- **Avoid Blackboxes:** Do not rely purely on visuals for core information. For any data visualization, consider overlaying accessible SVG/HTML elements or providing a textual data table outside the canvas【22†L113-L117】. E.g. project titles and descriptions should also be in DOM for screen readers.  
+- **Keyboard Navigation:** Ensure all interactive elements are reachable via keyboard. For example, when an object is selected (via click or focus), highlight it and allow pressing Enter to “open” it. Provide focus styles on HTML UI. A tool like [React Three Ally](https://github.com/pmndrs/react-three-ally) can help auto-generate anchors/focus points in the 3D scene for screen-reader users【22†L151-L160】.  
+- **Contrast & Color:** Maintain high contrast for UI text and critical graphics. Three.js allows checking fragment shader colors; ensure >3:1 contrast per WCAG guidelines【22†L169-L177】.  
 
----
+# Responsive Strategies  
 
-## 🎨 Animations & Interaction Details  
+- **Adaptive Resolution:** On high-DPI screens, use `renderer.setPixelRatio(window.devicePixelRatio)` but also consider capping for performance (e.g. `min(window.devicePixelRatio, 2)`). For mobile, you may render to a smaller offscreen buffer and upsample (per-pixel VRAM budgeting)【18†L434-L442】.  
+- **Touch vs Mouse UI:** Show or hide UI hints (e.g. “Swipe to look around” vs “Click and drag”). Use media queries or JS to detect device.  
+- **Layout Breakpoints:** For very small screens (mobile), simplify the scene: fewer objects, disable complex postprocessing, and rely more on vertical scroll for navigation instead of multi-DOF camera. Possibly fallback to a 2D image carousel if performance is insufficient.  
+- **CSS3D for 2D UI:** Use CSS media queries to adapt the style of any HTML overlay (font sizes, layout) for different viewports.  
 
-- **Camera Motion:** The camera is animated in subtle ways (e.g. slight translation on scroll, or orbit controls). For instance, on scroll we might update `camera.position.z` or `camera.lookAt(scene.position)`.  
-- **Hover Effects:** Detect cursor movement (`window.addEventListener('pointermove')`) to tilt or move UI cards (using CSS transforms) or adjust light positions for parallax feel.  
-- **Shaders:** Custom GLSL shaders can create effects (water ripples, neon glow). Three.js’s [`MeshBasicMaterial.onBeforeCompile`](https://threejs.org/docs/#api/en/materials/MeshBasicMaterial) hook or ShaderMaterial can inject GLSL code for advanced effects.  
-- **Performance Tips:** Keep poly count low (use simple geometries or LOD models). Reuse geometries/materials. Compress textures. Animate transforms rather than heavy physics. Keep renderer pixel ratio to device (`renderer.setPixelRatio(window.devicePixelRatio)`), but consider capping it for mobiles.  
+# Performance Budget & Optimizations  
 
-*(Three.js offers extensive docs on cameras, lights, and performance – e.g. see [Three.js docs on cameras](https://threejs.org/docs/#api/en/cameras/PerspectiveCamera) and [on render optimization](https://threejs.org/docs/#manual/en/introduction/Creating-a-scene).)*
+**Resource Budget:** Aim for <100k vertices total and ~50 draw calls per scene where possible【37†L525-L533】. Use `renderer.info.render.calls` to measure draw calls. Monitor `renderer.info.memory`.  
 
----
+**Geometry:**  
+- **Draco Compression:** Compress glTF meshes with Draco in modeling tools or gltf-transform (reduces size ≈90%【37†L438-L444】). In Three.js, set `DRACOLoader` on `GLTFLoader`.  
+- **Level of Detail (LOD):** Create 2–3 versions of complex models and switch by distance【37†L489-L497】. Three.js has `THREE.LOD`. Lower-poly versions for far views yield ~30–40% fps boost【37†L489-L497】.  
+- **Instancing:** For many identical objects (e.g. stars, trees), use `InstancedMesh` to batch draw calls (1 draw instead of N)【37†L531-L537】.  
 
-## 🛠️ Customization Guide  
+**Textures:**  
+- **Compress to Basis (KTX2):** Convert textures to Basis UASTC/ETC1S. This keeps them compressed on GPU (vram ~10× smaller)【37†L446-L454】. Use `KTX2Loader`.  
+- **Atlasing:** Combine multiple small textures into one atlas to reduce texture binds【18†L450-L459】. For example, pack all UI icons into one atlas and adjust UVs.  
+- **Resolution Limits:** Follow device limits (WebGL max texture size is ~4096×4096【67†L280-L287】). In practice target ~1024–2048 px for color maps on desktop; half that on mobile. See *Asset Size Guidelines* below.  
+- **Mipmaps:** Use `.generateMipmaps = true` and `.minFilter = THREE.LinearMipmapLinearFilter` to improve minification.  
 
-The project is designed to be **easily customizable**:
+**Rendering Techniques:**  
+- **Frustum Culling:** Three.js auto-culls meshes outside the camera frustum. Ensure large objects have `frustumCulled=true`.  
+- **Baked Lighting:** Pre-bake static lighting (ambient occlusion, lightmaps) into textures if possible. Use one directional/hemisphere light at runtime. This reduces per-frame lighting cost.  
+- **Shader Workload:** Follow MDN: do heavy math in vertex shaders (per-vertex) not fragment, and reuse varyings【18†L466-L474】. Avoid complex fragment effects.  
+- **Render Scaling:** Dynamically adjust rendering resolution or camera FOV in low-performance situations.  
+- **Post-processing Cost:** Minimize passes. Bloom and antialias (FXAA) add cost. Only enable high-cost effects on desktop; disable on mobile.  
 
-- **Replace Content:** Edit HTML to change your name, bio, and projects.  
-- **Swap Models:** In `/assets/models`, add your own GLTF/OBJ models. Update `script.js` to load them (`THREE.GLTFLoader` or `OBJLoader`).  
-- **Textures & Colors:** Swap textures/images in `/assets/images`. Change CSS variables or colors in the material definitions for a different theme.  
-- **Layout:** Use CSS Grid/Flex to add sections. Toggle `.hidden` classes to hide/show panels.  
-- **Add Features:** You can integrate more Three.js features (e.g. `OrbitControls` for drag, `Stats.js` for FPS counter, or GSAP for timeline animations).  
+**Profiling:** Use dev tools and stats.js. Key metrics: frame time (<16ms), draw calls (<100), texture/vbo memory.  
 
-**Note:** When editing assets, optimize them: use [Squoosh](https://squoosh.app) or [ImageOptim](https://imageoptim.com) to compress images【43†L318-L327】, and ensure any new GIF/PNG is within reason (keep icons under ~100KB, UI images under ~500KB, GIFs under ~5MB【23†L343-L350】).
+# Sample Implementation (Code Snippets)  
 
----
+- **Scene Setup:**  
+  ```js
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  // Initialize renderer & camera
+  const container = document.getElementById('scene-container');
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+  camera.position.set(0, 5, 10);
+  // Orbit controls
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; // smooth motion
+  // Lighting
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x444444));
+  scene.add(new THREE.DirectionalLight(0xffffff, 1.0));
+  // Animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+  ```  
+  This basic template follows patterns in Three.js docs【73†L6-L14】 and [70†L13-L21】.  
 
-## 📦 Deployment (Netlify)
+- **GLTF Loading:**  
+  ```js
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+  const loader = new GLTFLoader();
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath('/draco/'); // path to Draco decoder
+  loader.setDRACOLoader(dracoLoader);
+  loader.load('assets/models/project.glb', gltf => {
+    const model = gltf.scene;
+    scene.add(model);
+  }, undefined, err => console.error(err));
+  ```  
+  Here GLTFLoader (with Draco) imports a compressed model【36†L42-L49】. After loading, we add `gltf.scene` to the Three.js `scene`【36†L42-L49】.  
 
-This site is deployed on Netlify for continuous delivery. The flow is:
+- **Postprocessing (EffectComposer):**  
+  ```js
+  import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+  import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+  import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+  const composer = new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene, camera));
+  composer.addPass(new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.2, 0.4, 0.85));
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    composer.render();
+  }
+  ```  
+  Using `EffectComposer`, we chain a standard render pass and a bloom pass. This follows the Three.js example【70†L13-L21】, except we use `composer.render()` instead of `renderer.render()`.  
+
+- **Scroll-driven Camera:**  
+  ```js
+  import { CatmullRomCurve3 } from 'three';
+  const curve = new CatmullRomCurve3([new THREE.Vector3(0,5,10), new THREE.Vector3(10,5,0), new THREE.Vector3(0,5,-10)]);
+  window.addEventListener('scroll', () => {
+    const t = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    const pos = curve.getPointAt(t);
+    camera.position.copy(pos);
+    const lookAtPos = curve.getPointAt(Math.min(t + 0.001, 1));
+    camera.lookAt(lookAtPos);
+  });
+  ```  
+  This maps page scroll to camera motion along a spline.  
+
+- **Hover / Click Interaction:**  
+  ```js
+  const raycaster = new THREE.Raycaster(), mouse = new THREE.Vector2();
+  const highlightMaterial = new THREE.MeshBasicMaterial({color:0xffff00});
+  window.addEventListener('pointermove', e => {
+    mouse.x = (e.clientX/window.innerWidth)*2 - 1;
+    mouse.y = -(e.clientY/window.innerHeight)*2 + 1;
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(interactiveMeshes);
+    if(intersects.length) {
+      intersects[0].object.material = highlightMaterial;
+    }
+  });
+  window.addEventListener('click', () => {
+    if(intersects[0]) openProjectInfo(intersects[0].object.userData.projectId);
+  });
+  ```  
+  We raycast on mouse move to highlight objects, and on click to trigger actions. Attach identifying data to meshes (`userData`) for callback logic.  
+
+- **HTML/CSS UI Overlay:**  
+  Two patterns: 
+  1) **HTML Overlay:** Put UI in a fixed `<div id="ui-overlay">` above the canvas. Style with CSS and show/hide via JS. This is simplest and fully accessible.  
+  2) **CSS3DRenderer:** Embed DOM in 3D:  
+     ```js
+     import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+     const cssRenderer = new CSS3DRenderer();
+     cssRenderer.setSize(window.innerWidth, window.innerHeight);
+     document.body.appendChild(cssRenderer.domElement);
+     const domElement = document.createElement('div');
+     domElement.innerHTML = '<button onclick="goHome()">Home</button>';
+     const cssObject = new CSS3DObject(domElement);
+     scene.add(cssObject);
+     function animate() {
+       requestAnimationFrame(animate);
+       // sync cssRenderer with camera
+       cssRenderer.render(scene, camera);
+     }
+     ```  
+     This attaches an HTML `<button>` into the 3D scene【34†L4-L8】. It will transform and appear as part of the world. For complex UIs, it may be easier to use standard HTML overlays, but CSS3D offers nice integrated effects.  
+
+# Asset Pipeline  
+
+- **Modeling:** Use Blender/3ds Max/Maya to create low-to-mid-poly models of projects or scene objects. Export to glTF/GLB using built-in exporter. For textures, use **PNG/JPEG** for UI assets, normal/AO maps etc.  
+- **Compression:** Run `gltf-transform` CLI (Draco/KTX2) on .glb files:  
+  ```
+  npx gltf-transform draco in.glb out-draco.glb
+  npx gltf-transform ktx2 in.png out.ktx2 --level 2
+  ```  
+  This significantly reduces download size【37†L438-L446】【37†L446-L454】. For example, Draco can cut a 10MB mesh to ~1MB【37†L438-L444】.  
+- **HDRI Textures:** Download free HDR panoramas (e.g. from [polyhaven.com](https://polyhaven.com/)【4†L441-L446】). Convert to `.hdr` or `.exr`. In code, load via `RGBELoader` and generate PMREM【39†L67-L74】. Input HDRI at ~1024×512 for optimal filtering【39†L67-L74】.  
+- **Texture Resolution:** As a guide (see table below), aim for 512–2048 px for color/albedo maps, depending on device. Use **mipmaps**. For UI and text, use high-res HTML/CSS instead of textures.  
+- **File Naming:** Use consistent, lowercase, underscore-separated names (e.g. `project1_model.glb`, `wall_diffuse.ktx2`). This avoids conflicts and is easier to manage in code.  
+- **Tools:** Blender (modeling), Substance Painter (texturing), glTF-Transform (compression), Pinata or Netlify Large Media (if hosting large files).  
+
+# Testing & Profiling  
+
+- **Performance Testing:** Use Three.js’s [Stats.js](https://github.com/mrdoob/stats.js/) to monitor FPS. In code, log `renderer.info.render.calls` and `renderer.info.memory` each frame. Test on target devices (mid-tier phone, laptop, desktop).  
+- **Profiling:** Browser DevTools (Performance, Memory). Look for GPU bottlenecks or forced reflows. Pay attention to WebGL warnings.  
+- **Stress Tests:** Test with many objects (simulate worst-case) and measure.  
+- **Automated Tests:** While 3D UIs are hard to unit-test, consider snapshot tests of static scenes or key functions (e.g. raycasting returns expected objects).  
+- **Metrics:** Ensure 60fps on desktop; aim ≥30fps on mobile. VRAM usage should obey our per-pixel budget【18†L410-L417】 (e.g. mobile budget ~4 bytes/pixel).  
+
+# Deployment & CI/CD  
+
+- **Hosting:** Use **Netlify** or **Vercel** (both support static sites with Three.js). Netlify was used for the existing site. Configure build to optimize and upload compressed models/images.  
+- **CDN:** Serve heavy assets (models, textures) via a CDN. Netlify Large Media (Git LFS + CDN) or Amazon S3/CloudFront can host GLB and HDRI files. This speeds load and caching.  
+- **HTTPS/CSP:** Ensure site uses HTTPS (by default on Netlify/Vercel). Set a Content Security Policy blocking inline scripts unless hashed (to protect against XSS).  
+- **CI Pipeline:** GitHub Actions can automate build: run linter, bundle JS, run glTF-Transform on assets, and deploy. Example: trigger on push to `main`, build with `npm run build`, then `netlify deploy --prod`.  
+- **SRI (Optional):** For external libs (e.g. if using CDN-hosted three.min.js), enable Subresource Integrity hashes.  
+- **Environment:** No sensitive user data is processed, but avoid tracking unless GDPR-compliant. If using analytics (Google Analytics, etc.), ensure privacy-friendly settings.  
+
+# Security & Privacy  
+
+- **Input Sanitization:** If any text input or URL parameters are used (unlikely for a portfolio), sanitize thoroughly. Avoid `eval()` or unsafe innerHTML.  
+- **Dependencies:** Audit npm packages for vulnerabilities. For Three.js and addons, stay up-to-date to get security patches.  
+- **CORS & File Hosting:** Configure asset hosting for safe domains. If hosting models on a different domain, set appropriate CORS headers.  
+- **Data Privacy:** Do not include user tracking without consent. If any form/email capture exists, use HTTPS and secure storage.  
+- **Open Source Compliance:** If incorporating third-party 3D assets or code, respect licenses (Three.js is MIT).  
+
+# Implementation Roadmap  
+
+We recommend an **iterative** approach. Below is a suggested schedule (in hours) with major milestones.  
+
+| Milestone | Description | Deliverables | Est. Hours |
+|---|---|---|---|
+| **1. Project Setup (15h)** | Setup repository, dev environment (Vite/Webpack), initial files. Create basic Three.js scene with camera and controls. Test rendering a simple object (cube). | Skeleton code (index.html, main.js), basic scene rendered, OrbitControls working. | 15 |
+| **2. Asset Pipeline & Loading (20h)** | Integrate model pipeline: set up GLTFLoader/DRACOLoader/KTX2Loader. Import a placeholder 3D model and texture. Implement `PMREMGenerator` for HDRI lighting. | Working model import demo, environment lighting from HDRI, verify Draco/KTX compression. | 20 |
+| **3. Scene Structure & UI (25h)** | Build `SceneManager` and `SceneSubjects`. Create the “home” scene: e.g. add ground plane, lights. Develop initial UI overlay (HTML panel or CSS3D) for navigation. | SceneManager module, one scene class (e.g. HomeScene), clickable UI (e.g. “Start” button) layered in. | 25 |
+| **4. Camera Paths & Interaction (25h)** | Implement camera motion logic (scroll or button-driven paths). Add raycasting for hover/select. Code project selection behavior (e.g. click to open project detail camera move). | Smooth camera transitions between scenes, working hover highlight and click actions. | 25 |
+| **5. Post-Processing & Shaders (15h)** | Add visual polish: glow, tone mapping, etc. Integrate `EffectComposer` for bloom or vignette. Write any custom shaders if needed (e.g. hover effect). | Configured postprocessing chain, desirable visual effects enabled (with fallback off on mobile). | 15 |
+| **6. Performance Optimization & Testing (10h)** | Profile and optimize (LOD, instancing, reduce draw calls). Implement mobile-specific adjustments. Test on multiple devices/browsers. Fix performance bottlenecks. | Performance report, optimized assets (compressed, LODs), acceptable frame rates achieved. | 10 |
+| **7. Accessibility & Fall-back (5h)** | Add ARIA labels and keyboard controls. Create static fallback page or message for old browsers. Finalize UI text for screen readers. | Accessibility review completed, fallback content in place, site passes basic accessibility audits. | 5 |
+| **8. Deployment & CI (5h)** | Configure build for production (minify, asset hashing). Set up GitHub Action to deploy to Netlify/Vercel on push. | Automated deployment pipeline, live site updated from repo. | 5 |
+
+**Total ~100 hours**. This is a rough estimate; complex interactions or models may adjust the time.  
+
+**Minimal Viable Prototype (MVP) Checklist:**  
+- [ ] Basic Three.js scene loading (`scene.add(gltf)` works).  
+- [ ] Camera with OrbitControls (mouse/touch rotate & zoom).  
+- [ ] A few interactive objects (e.g. clickable project thumbnails).  
+- [ ] Smooth camera move on scroll or button.  
+- [ ] Basic HTML overlay panel (e.g. project title).  
+- [ ] Fallback for no-WebGL (simple message or 2D snapshot).  
+
+# Alternative Libraries & Tools  
+
+| Category         | Option A               | Option B               | Pros & Cons (Summary) |
+|------------------|------------------------|------------------------|-----------------------|
+| **3D Framework** | **Vanilla Three.js**   | **React Three Fiber**  | *Vanilla:* No React needed, explicit control, smaller bundle. *R3F:* React component model, easier state/props management, rich ecosystem (drei, leva)【12†L63-L72】. R3F adds some overhead and learning curve. |
+| **Physics Engine** | **Cannon-ES**         | **Ammo.js**            | *Cannon-ES:* Pure JS, easy API, actively maintained by pmndrs, but slower. *Ammo.js:* Full Bullet feature set (constraints, collision), but large WASM + slower start. **Rapier (WASM)** is a third strong choice: very fast, but even bigger initial load. |
+| **Postprocessing** | **EffectComposer (three-addons)** | **vanruesc/postprocessing** | *EffectComposer:* Built into Three.js, flexible, but verbose setup for each pass (RenderPass, ShaderPass). *postprocessing:* Modern wrapper (npm package) with many ready passes and simpler config. Either works. |
+| **Debug GUI**    | **lil-gui**            | **tweakpane / leva**   | *lil-gui:* Drop-in replacement for dat.GUI【68†L23-L32】, minimal. *tweakpane:* More plugins/complex UI. *Leva:* React-specific. (For our purposes, HTML UI often replaces these in production.) |
+
+# Asset Size Guidelines  
+
+We recommend targeting three device classes with appropriate asset budgets:  
+
+| Asset Type       | Mobile (Low/Med)       | Tablet             | Desktop (High)        |
+| ---------------- | -----------------------| ------------------ | --------------------- |
+| **Texture Max**  | 512×512 to 1024×1024   | 1024×1024 to 2048×2048 | up to 4096×4096 (cap)【67†L280-L287】 |
+| **Model Tris**   | ~5k – 20k triangles    | ~20k – 50k         | 50k+ (use LOD/instancing) |
+| **Environment Map** | 512×256 (HDR)         | 1024×512 (HDR)     | 2048×1024 or 4096×2048 (HDR) |
+| **Lightmap/Shadowmap** | 512×512            | 1024×1024         | 2048×2048 |
+| **Post-process Buffer** | Full res  or half for perf | Full res | Full res |
+| **Vendor Scripts**   | minimal (treeshake) | moderate | moderate  |
+
+These are guidelines: always check actual device limits (WebGL min spec supports 4096×4096 textures【67†L280-L287】). Mobile GPUs often only allow up to 2048. Test on real devices.  
+
+# Example Diagrams & Visuals  
 
 ```mermaid
-flowchart LR
-    A[GitHub &#8594; Push Repo] --> B[Netlify Build Starts]
-    B --> C{Build Success?}
-    C -- Yes --> D[Deploy to Production]
-    C -- No  --> E[Build Failed (Check Logs)]
-    D --> F[Live Site Updated]
-```
-
-1. **Push to GitHub:** Any commit to the `main` branch triggers Netlify.  
-2. **Netlify Build:** Netlify pulls from GitHub, runs any build commands (for static site, often none beyond bundling or copying files).  
-3. **Deploy:** On success, the updated site is published (automatically live). Status badges and logs are updated in Netlify (see [Netlify docs on status badges]【37†L133-L141】).  
-
-To set this up for your fork: after pushing, go to Netlify Dashboard → *Add new site* → *Import from GitHub*, select your repo, and link it. Netlify will provide a Status Badge snippet (copy that Markdown into README). For example:
-```md
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_PROJECT_ID/deploy-status)](https://app.netlify.com/sites/YOUR_SITE_NAME/deploys)
-```
-Replace `YOUR_PROJECT_ID` and `YOUR_SITE_NAME` with values from your Netlify *Settings > Status badges* page【37†L149-L158】.
-
----
-
-## 🌐 3D Preview Options Comparison  
-
-| Preview Method         | Pros                                     | Cons                                                | File Size  | Dimensions (w×h)       | Implementation                                                         |
-|------------------------|------------------------------------------|-----------------------------------------------------|------------|------------------------|------------------------------------------------------------------------|
-| **Animated GIF**       | - Shows motion (camera, objects) <br>- Universal support in Markdown <br>- Easy to embed with `<img>`【47†L170-L178】 | - Large file (megabytes) can slow loading【23†L343-L350】 <br>- Static once embedded (no interactivity) | ~1–5 MB (target) | ~600×400 or HD, scaled down | 1) Record screen or export video <br> 2) Use ffmpeg to convert (limit fps, resize)【49†L126-L134】 <br> 3) Host GIF (e.g. in repo or externally) and embed with `![Alt](URL)`【47†L170-L178】 |
-| **Animated SVG**      | - Vector (crisp at any resolution) <br>- Very small size (<50KB) <br>- Text effects possible with SVG animations | - No true 3D content (flat 2D animations) <br>- Limited effects (no frame-by-frame video) <br>- Some Markdown renderers may inline SVG as image (supported on GitHub) | < 100 KB  | Any (set in viewBox) | 1) Create SVG with `<animate>` elements (e.g. flicker, color-change). <br> 2) Copy SVG code into Markdown (`![Alt](data:image/svg+xml;utf8,<svg ...>`) or link as file.  |
-| **Live Embed / Screenshot** | - Best quality (actual website) <br>- Keeps animation - Static screenshot optional <br>- Small file if static | - No inline rendering of live site on GitHub <br>- User must click link to see 3D scene <br>- Screenshot is static image only | Screenshot ~200–500KB (PNG) | e.g. 1280×720 (HD) | 1) Link to live site (via badges or hyperlink). <br> 2) For inline preview, capture screenshot of site, compress, and embed like `![Site screenshot](img.png)`. <br>3) Or embed a short screen-record video if converted to small GIF. |
-
----
-
-## 🖼️ Image Hosting Recommendations  
-
-- **Primary Sources:** Use the Netlify site or GitHub itself for images. For example, take screenshots of your live site (or use saved assets) and store them in the repo (e.g. `/assets/images/`) or host on an image CDN (Imgur, Cloudinary).  
-- **Netlify Deploy:** You can also use your Netlify domain (or a serverless function) to serve images, but simplest is direct linking to a raw GitHub or Netlify file URL.  
-- **Original Files:** Whenever possible, use original high-quality assets. Convert them (see GIF recipe above) rather than sourcing from unknown image search. 
-
-*Example:* To embed an image from this repo, you could use:  
-```md
-![Dashboard Screenshot](/assets/images/dashboard.png)
-``` 
-GitHub will display it from the repo itself.
-
----
-
-## 🏷️ Suggested Badges  
-
-Copy these Markdown lines into your README:
-
-```md
-[![Live Demo](https://img.shields.io/website?url=https%3A%2F%2Fchandan404.netlify.app&logo=google-chrome&label=Live%20Demo)](https://chandan404.netlify.app/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_PROJECT_ID/deploy-status)](https://app.netlify.com/sites/YOUR_SITE_NAME/deploys)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![three.js](https://img.shields.io/badge/three.js-v0.15-black?logo=three.js&logoColor=white)](https://threejs.org/)
-```
-
-- **Live Demo:** Opens the site (uses Shields’ [website status badge](https://img.shields.io/website)).  
-- **Netlify Status:** Shows build success/failure (replace `YOUR_PROJECT_ID` and `YOUR_SITE_NAME`).  
-- **License:** Standard MIT badge.  
-- **Three.js:** Badge with Three.js logo.  
-
-These provide quick status info and links to the live site, deployments, license file, and Three.js official site.
-
----
-
-## ✅ Accessibility & Performance Checks  
-
-- **Alt Text:** Always add descriptive `alt="..."` text to images and GIFs【54†L541-L550】. For example: `![Rotating 3D cube](/assets/images/cube.gif)`. Screen readers will announce this so users know what the image is.  
-- **Headings & Links:** Use clear headings (H1 for title, H2/H3 for sections) and avoid ambiguous link text【54†L580-L588】【54†L518-L526】. E.g. `[Live Demo]` instead of `[Click here]`.  
-- **Color Contrast:** Ensure text/graphics on dark backgrounds have high contrast. Tools like the [Chrome Accessibility Developer Tools](https://developer.chrome.com/docs/devtools/accessibility/) can audit color contrast.  
-- **Image Optimization:** Compress all images/GIFs. Tools like [Squoosh](https://squoosh.app) or ImageOptim can reduce PNG/JPEG size by >50% without visible loss【43†L318-L327】. For GIFs, consider converting to MP4/WebM for small demos (though GitHub READMEs only accept GIF/PNG/JPEG).  
-- **Lighthouse Audit:** Run [Lighthouse](https://developers.google.com/web/tools/lighthouse) to check performance, accessibility, and SEO scores【56†L137-L145】. Netlify can even run a Lighthouse plugin on each build【56†L137-L145】. Aim for a fast initial load: all images **LCP**-optimized, use `width`/`height` attributes on `<img>`, and minify CSS/JS. 
-
-By following these guidelines (accessible links/alt text, optimized images, Lighthouse testing), your README will be both impressive and inclusive.
-
----
-
-## 🔮 Roadmap (Future Enhancements)  
-
-- [ ] Add **GLTF 3D models** (e.g. custom logo or icons) to scene.  
-- [ ] Implement **scroll-driven animations** (use [ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) or GSAP).  
-- [ ] Shader effects: rippling water, hologram glitches (GLSL via Three.js).  
-- [ ] Improve mobile performance: reduce polycount on small screens, conditional rendering.  
-- [ ] Optional: add a toggle for Light/Dark mode with different skybox/environment maps.  
-
-These improvements can further showcase your skills and keep the portfolio cutting-edge.
-
----
-
-## ⚡ Quick Reference Assets & Code  
-
-**a) GIF Generation Recipe (via FFmpeg):**  
-```bash
-# Record or export a short clip (e.g. MP4), then convert:
-ffmpeg -ss 0 -i clip.mp4 -r 10 -vf "scale=800:-1" -pix_fmt rgb24 -y demo.gif
-```
-- `-ss 0`: start at 0 seconds; `-t 5` to limit length.  
-- `-r 10`: 10 fps (lower for smaller file).  
-- `scale=800:-1`: width 800px, height auto.  
-- `rgb24`: use RGB color.  
-This reduces size; in one example it shrank a 29MB GIF to ~2MB【49†L126-L134】.
-
-**b) Animated SVG Header (example):**  
-```svg
-<svg viewBox="0 0 600 100" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="glow" x1="0%" x2="100%" y1="0%" y2="0%">
-      <stop offset="0%" stop-color="#0ff">
-        <animate attributeName="stop-color" values="#0ff; #3af; #0ff" dur="1.5s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#3af">
-        <animate attributeName="stop-color" values="#3af; #0ff; #3af" dur="1.5s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
-  </defs>
-  <text x="50%" y="60%" text-anchor="middle" font-family="monospace" font-size="36" fill="url(#glow)">
-    3D PORTFOLIO
-  </text>
-</svg>
-```
-This SVG animates a neon gradient on the text "3D PORTFOLIO". You can embed it by uploading as `.svg` or using a data URI. For example:  
-```md
-![3D Portfolio](data:image/svg+xml;utf8,<svg>…</svg>)
+graph LR
+  index["index.html"] --> mainjs["main.js (entry)"]
+  mainjs --> SceneMgr["SceneManager"]
+  SceneMgr --> Scene["Three.js Scene"]
+  Scene --> Camera
+  Camera --> Renderer["WebGLRenderer"]
+  SceneMgr --> UIComp["HTML/CSS UI Overlay"]
+  UIComp --> Renderer
+  CSS3D["CSS3DRenderer"] --> Scene
 ```  
 
-**c) Three.js Splash-Screen Script (ES Module):**  
-```js
-// splash.js - minimal Three.js scene (importable or <script type="module">)
-import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+**Figure:** Conceptual architecture: index.html loads main.js, which instantiates a SceneManager. The SceneManager sets up a Three.js Scene and Camera, which feed into the WebGLRenderer. UI is handled by HTML overlays or the CSS3DRenderer (as shown).  
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setSize(innerWidth, innerHeight);
-document.body.appendChild(renderer.domElement);
-
-// Torus knot geometry with neon material
-const geometry = new THREE.TorusKnotGeometry(1, 0.3, 100, 16);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ffff });
-const knot = new THREE.Mesh(geometry, material);
-scene.add(knot);
-
-// Ambient glow
-const light = new THREE.PointLight(0x00ffff, 1.2);
-light.position.set(5, 5, 5);
-scene.add(light);
-
-camera.position.z = 3;
-
-function animate() {
-  requestAnimationFrame(animate);
-  knot.rotation.x += 0.01;
-  knot.rotation.y += 0.02;
-  renderer.render(scene, camera);
-}
-animate();
-```
-This creates a spinning **torus knot** with a cyan glow. Save as `splash.js` and include in an HTML file (host on Netlify). Example HTML:  
-```html
-<!DOCTYPE html><body><script type="module" src="splash.js"></script></body>
+```mermaid
+flowchart TB
+  User[User Input (mouse/touch/keyboard)] -->|pointer| Raycaster["Raycast on scene"]
+  Raycaster -->|hit| Select[Select Object] --> Highlight[Highlight & show info]
+  User -->|scroll| Animate["Animate Camera along path"]
+  Select -->|info| UI["Display HTML/CSS Overlay"]
 ```  
-Link to it in README for a live intro or use as a template for your own effect.
 
----
+**Figure:** Interaction flow: pointer events trigger raycasting on the 3D scene to select objects; scroll events animate the camera. Selected objects open an HTML/CSS overlay for details.  
 
-## 📚 Sources & Further Reading  
+【53†embed_image】 *Screenshot: Example development environment showcasing code structure. In practice, `index.html` loads the module `main.js`, which initializes the Three.js scene (SceneManager) and organizes scene entities into independent classes【29†L88-L96】【75†L46-L49】. The static HTML UI is kept separate (here shown in a sidebar).*  
 
-- Three.js documentation – for geometry, cameras, materials: “Three.js is a cross-browser JavaScript library for creating 3D graphics using WebGL and WebGPU.”【32†L1-L4】 (see [manual](https://threejs.org/manual/#en/creating-a-scene)).  
-- Netlify Docs – “Status badges are visual representations of your site’s status… add it to repository READMEs”【37†L133-L141】.  
-- Web.dev – *Image Compression*: “Lossless compression is used for GIF, PNG, WebP, and AVIF… You can compress images using Squoosh or ImageOptim.”【43†L318-L327】.  
-- StackOverflow & Blogs on GIFs – Tips to host and compress GIFs.  Large GIFs (25MB) are impractical in READMEs; host externally and use optimized size【47†L170-L178】【49†L126-L134】.  
-- GitHub Accessibility – Use alt text and structured headings: “Using image descriptions (alt text) helps… Everyone can extract meaning”【54†L541-L550】; Lighthouse audits for performance and accessibility【56†L137-L145】.  
+【66†embed_image】 *Figure: Neon-themed UI concept (example aesthetic inspiration). A stylized 3D interface might use similar color schemes or geometry. In our implementation, actual interactive UI will be HTML/CSS (for accessibility), but creative rendering could use glowing materials and neon highlights.*  
 
-This README template and guide ensure your **3D portfolio** README is as dynamic and impressive as the site itself. Adjust the content, assets, and code to fit your project, and deploy confidently.  
+# References  
 
-Happy coding – make it *feel* 3D!
+- Three.js Docs: controls, loaders, rendering, post-processing (e.g. `OrbitControls`, `GLTFLoader`, `EffectComposer`)【73†L6-L14】【70†L13-L21】【36†L42-L49】.  
+- Discover Three.js: project structure (`index.html`, `main.js`, etc.)【75†L18-L20】【75†L46-L49】.  
+- Three.js Forum: GUI library recommendations (lil-gui, tweakpane)【68†L23-L32】.  
+- MDN WebGL Best Practices: batching, VRAM budgeting (per-pixel budgets)【18†L440-L448】【18†L424-L432】.  
+- WebGL Limits (MAX_TEXTURE_SIZE 4096)【67†L280-L287】.  
+- Performance Tips (Utsubo’s Three.js guide): Draco compression ~90% size reduction【37†L438-L444】, KTX2 texture compression ~10× VRAM savings【37†L446-L454】, LOD improves frame rate ~30-40%【37†L489-L497】, target <100 draw calls【37†L525-L533】.  
+- Accessibility in WebGL (PlainEnglish): ARIA canvas labeling, alternative text, hybrid approaches【22†L97-L104】【22†L113-L117】.  
+- Three.js Examples and Patterns (e.g. SceneManager, SceneSubjects)【29†L76-L84】【29†L88-L96】.  
+- EffectComposer Doc (postprocessing usage example)【70†L13-L21】.  
+- CSS3DRenderer (Three.js Docs) for embedding DOM in 3D【34†L4-L8】.  
+- GLTFLoader Doc (supported extensions, code example with DRACOLoader)【36†L42-L49】.  
+- *Note:* All code examples are based on official docs and best practices (Three.js docs, DiscoverThreeJS, etc.). All cited sources are authoritative references.  
+
