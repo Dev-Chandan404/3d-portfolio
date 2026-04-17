@@ -68,9 +68,9 @@ npm install
 
 # 4. Start the development server
 npm run dev
-
-Open http://localhost:5173 in your browser.
 ```
+Open http://localhost:5173 in your browser.
+
 Build for Production
 Bashnpm run build
 The optimized build will be in the dist/ folder.
