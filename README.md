@@ -1,118 +1,130 @@
-# 🌌 3D Portfolio
+<div align="center">
+  <h1>
+    🌌 3D Portfolio
+  </h1>
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-00d4ff?style=for-the-badge&logo=netlify&logoColor=white)](https://chandan404.netlify.app/)
-[![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge)](https://react.dev/)
-[![Three.js](https://img.shields.io/badge/Three.js-000000?logo=threedotjs&logoColor=white&style=for-the-badge)](https://threejs.org/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vite.dev/)
+  <p>
+    <strong>A stunning, fully interactive 3D personal portfolio</strong><br>
+    Built with React, Three.js & Tailwind — smooth animations, immersive experience, and modern design.
+  </p>
 
-**A modern, immersive 3D personal portfolio** showcasing projects, skills, and experience with interactive 3D elements, smooth animations, and a clean, responsive design.
+  <a href="https://chandan404.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Now-00d4ff?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo">
+  </a>
+  
+  <a href="https://github.com/Dev-Chandan404/3d-portfolio/stargazers" target="_blank">
+    <img src="https://img.shields.io/github/stars/Dev-Chandan404/3d-portfolio?style=for-the-badge&logo=github&color=ffd700" alt="GitHub Stars">
+  </a>
+  
+  <a href="https://github.com/Dev-Chandan404/3d-portfolio/fork" target="_blank">
+    <img src="https://img.shields.io/github/forks/Dev-Chandan404/3d-portfolio?style=for-the-badge&logo=github&color=00ff88" alt="GitHub Forks">
+  </a>
 
-Built as a **Frontend Developer** portfolio for **Chandan**.
+  <br><br>
+
+  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge" alt="React">
+  <img src="https://img.shields.io/badge/Three.js-000000?logo=threedotjs&logoColor=white&style=for-the-badge" alt="Three.js">
+  <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge" alt="Vite">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B67F?logo=tailwindcss&logoColor=white&style=for-the-badge" alt="Tailwind">
+  <img src="https://img.shields.io/badge/GSAP-00FF9F?logo=greensock&logoColor=black&style=for-the-badge" alt="GSAP">
+
+  <br><br>
+  <strong>✦ Made with ❤️ & Three.js magic by Chandan ✦</strong>
+</div>
 
 ---
 
 ## ✨ Features
 
-- **Fully Interactive 3D Scene** — Animated planet model (`.glb`) using React Three Fiber + Drei
-- **High-Performance Animations** — Powered by GSAP and Lenis for buttery-smooth scrolling
-- **Modern Tailwind Design** — Fully responsive across all devices
-- **Fast Development Experience** — Built with Vite + React 19
-- **Modular & Clean Code** — Organized into sections, components, and constants
-- **Easy to Customize** — Project data, skills, and 3D assets are all in one place
-
----
-
-## 🛠 Tech Stack
-
-| Category          | Technologies |
-|-------------------|--------------|
-| **Framework**     | React 19, Vite |
-| **3D Graphics**   | Three.js, @react-three/fiber, @react-three/drei |
-| **Styling**       | Tailwind CSS |
-| **Animations**    | GSAP + @gsap/react, Lenis |
-| **Utilities**     | Maath, React Icons, React Scroll, React Responsive |
-| **Development**   | ESLint, TypeScript-ready setup |
-
----
-
-## 🚀 Live Demo
-
-**→ [https://chandan404.netlify.app/](https://chandan404.netlify.app/)**
-
-*(Try interacting with the 3D planet in the hero section!)*
+- 🌍 **Immersive 3D Hero** — Interactive rotating planet with mouse controls (`.glb` model)
+- ⚡ **Ultra-smooth Scrolling** — Powered by Lenis + GSAP
+- 🎨 **Modern Glassmorphic UI** — Beautiful Tailwind design with dark theme
+- 📱 **Fully Responsive** — Looks perfect on mobile, tablet & desktop
+- 🚀 **Blazing Fast** — Built with Vite + React 19
+- 🔧 **Easy to Customize** — All data (projects, skills, socials) in one file
 
 ---
 
 ## 📸 Preview
 
-*(./public/images/portfolio.png)*
+*(Add your GIF/screenshots here — highly recommended!)*
+
+![3D Portfolio Preview](https://via.placeholder.com/1200x600/0A0A0A/00d4ff?text=3D+Portfolio+Preview+Coming+Soon)
+
+---
+
+## 🛠 Tech Stack
+
+| Category          | Technology                          |
+|-------------------|-------------------------------------|
+| **Frontend**      | React 19, Vite                      |
+| **3D Graphics**   | Three.js, React Three Fiber, Drei   |
+| **Styling**       | Tailwind CSS                        |
+| **Animations**    | GSAP + @gsap/react, Lenis           |
+| **3D Helpers**    | Maath                               |
+| **Icons**         | React Icons                         |
+
+---
+
+## 🚀 Live Demo
+
+**[🔗 Click here to experience the 3D Portfolio](https://chandan404.netlify.app/)**
+
+> *Try dragging the planet in the hero section!*
 
 ---
 
 ## 🏗 Getting Started
 
-### Prerequisites
-- Node.js (v18 or higher)
-
-### Installation
-
+### 1. Clone the repo
 ```bash
-# 1. Clone the repository
 git clone https://github.com/Dev-Chandan404/3d-portfolio.git
-
-# 2. Navigate into the project
 cd 3d-portfolio
-
-# 3. Install dependencies
-npm install
-
-# 4. Start the development server
-npm run dev
-```
-Open http://localhost:5173 in your browser.
-```
+2. Install dependencies
+Bashnpm install
+3. Run development server
+Bashnpm run dev
+Open http://localhost:5173 and enjoy the magic ✨
 Build for Production
 Bashnpm run build
-The optimized build will be in the dist/ folder.
+Output folder: dist/
 
 📁 Project Structure
 Bash3d-portfolio/
-├── public/                  # Static assets
+├── public/
+│   └── models/                  # 3D assets
 ├── src/
-│   ├── components/          # Reusable UI components
-│   ├── sections/            # Hero, About, Skills, Projects, Contact, etc.
-│   ├── constants/           # Projects data, skills, social links
-│   ├── utils/               # Helper functions
-│   ├── App.jsx              # Root component
-│   ├── SafeCanvas.jsx       # Safe R3F Canvas wrapper
-│   ├── index.css
+│   ├── components/              # Reusable components
+│   ├── sections/                # Hero, About, Skills, Projects, Contact
+│   ├── constants/               # All your data (projects, skills, links)
+│   ├── utils/                   # Helper functions
+│   ├── App.jsx
+│   ├── SafeCanvas.jsx           # R3F Canvas wrapper
 │   └── main.jsx
-├── Planet-transformed.glb   # Main 3D model (used in hero)
+├── Planet-transformed.glb       # Main 3D planet model
 ├── vite.config.js
-├── tailwind.config.js       # (via @tailwindcss/vite)
+├── tailwind.config.js
 └── package.json
-````
-```
-🎨 Customization
 
-Update your info → Edit src/constants/index.js (or wherever your data lives)
-Change 3D model → Replace Planet-transformed.glb and update the component
-Add new sections → Create new files in src/sections/ and import them in App.jsx
-Modify styling → Tailwind classes are used throughout
+🎨 How to Customize (Super Easy)
 
-```
+Change your info → Edit src/constants/index.js
+Replace 3D model → Drop your own .glb file and update the path
+Add new projects → Just add objects in the projects array
+Update colors → Modify Tailwind config or CSS variables
+
+
 👤 Author
 Chandan
-Frontend Developer
+Frontend Developer & 3D Enthusiast
 
-GitHub: @Dev-Chandan404
-Portfolio: chandan404.netlify.app
-LinkedIn / Twitter → Add your links in the constants!
+GitHub → @Dev-Chandan404
+Live Portfolio → chandan404.netlify.app
+LinkedIn / Twitter → Add your links in constants!
 
 
 📄 License
-This project is open source and licensed under the MIT License.
-Feel free to fork it, customize it, and use it for your own portfolio! ⭐
+This project is licensed under the MIT License — feel free to use it for your own portfolio!
 
-Made with ❤️ and a lot of Three.js magic.
 
+  ⭐ Star this repo if you like it!
