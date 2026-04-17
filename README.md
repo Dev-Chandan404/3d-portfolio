@@ -92,6 +92,7 @@ Bash3d-portfolio/
 ├── tailwind.config.js       # (via @tailwindcss/vite)
 └── package.json
 ````
+```
 🎨 Customization
 
 Update your info → Edit src/constants/index.js (or wherever your data lives)
@@ -99,7 +100,7 @@ Change 3D model → Replace Planet-transformed.glb and update the component
 Add new sections → Create new files in src/sections/ and import them in App.jsx
 Modify styling → Tailwind classes are used throughout
 
-
+```
 👤 Author
 Chandan
 Frontend Developer
@@ -114,7 +115,4 @@ This project is open source and licensed under the MIT License.
 Feel free to fork it, customize it, and use it for your own portfolio! ⭐
 
 Made with ❤️ and a lot of Three.js magic.
-text**Just copy the entire markdown above and replace the current `README.md` in your repo.**  
-It’s much more accurate, professional, and developer-friendly than the old version (which listed only HTML/CSS/JS).  
 
-Let me know if you want a shorter version, dark-mode badges, or extra sections (like "How to Add
