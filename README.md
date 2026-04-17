@@ -70,7 +70,7 @@ npm install
 npm run dev
 ```
 Open http://localhost:5173 in your browser.
-
+```
 Build for Production
 Bashnpm run build
 The optimized build will be in the dist/ folder.
@@ -91,7 +91,7 @@ Bash3d-portfolio/
 ├── vite.config.js
 ├── tailwind.config.js       # (via @tailwindcss/vite)
 └── package.json
-
+````
 🎨 Customization
 
 Update your info → Edit src/constants/index.js (or wherever your data lives)
