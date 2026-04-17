@@ -45,7 +45,7 @@ Built as a **Frontend Developer** portfolio for **Chandan**.
 
 ## 📸 Preview
 
-*(Recommended: Add a GIF or screenshots here showing the 3D planet, scroll animations, and mobile view)*
+*(./public/images/portfolio.png)*
 
 ---
 
