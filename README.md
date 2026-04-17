@@ -22,6 +22,16 @@
 
   <br><br>
 
+  <!-- 🔥 ANIMATED GIF PREVIEW (Replace URL after uploading your demo.gif) -->
+  <img src="https://github.com/Dev-Chandan404/3d-portfolio/blob/main/demo.gif?raw=true" 
+       alt="3D Portfolio Animated Preview" 
+       width="100%" 
+       style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);">
+  
+  <p><em>✦ Interactive 3D Planet • GSAP Scroll • Glassmorphic UI • Fully Responsive ✦</em></p>
+
+  <br>
+
   <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge" alt="React">
   <img src="https://img.shields.io/badge/Three.js-000000?logo=threedotjs&logoColor=white&style=for-the-badge" alt="Three.js">
   <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge" alt="Vite">
@@ -36,20 +46,12 @@
 
 ## ✨ Features
 
-- 🌍 **Immersive 3D Hero** — Interactive rotating planet with mouse controls (`.glb` model)
+- 🌍 **Immersive 3D Hero** — Fully interactive rotating planet with mouse drag & scroll controls (`.glb` model)
 - ⚡ **Ultra-smooth Scrolling** — Powered by Lenis + GSAP
-- 🎨 **Modern Glassmorphic UI** — Beautiful Tailwind design with dark theme
-- 📱 **Fully Responsive** — Looks perfect on mobile, tablet & desktop
+- 🎨 **Modern Glassmorphic UI** — Beautiful dark theme with Tailwind
+- 📱 **100% Responsive** — Perfect on mobile, tablet & desktop
 - 🚀 **Blazing Fast** — Built with Vite + React 19
-- 🔧 **Easy to Customize** — All data (projects, skills, socials) in one file
-
----
-
-## 📸 Preview
-
-*(Add your GIF/screenshots here — highly recommended!)*
-
-![3D Portfolio Preview](https://via.placeholder.com/1200x600/0A0A0A/00d4ff?text=3D+Portfolio+Preview+Coming+Soon)
+- 🔧 **Super Easy to Customize** — All your data in one constants file
 
 ---
 
@@ -68,9 +70,9 @@
 
 ## 🚀 Live Demo
 
-**[🔗 Click here to experience the 3D Portfolio](https://chandan404.netlify.app/)**
+**[🔗 Experience the full 3D Portfolio here](https://chandan404.netlify.app/)**
 
-> *Try dragging the planet in the hero section!*
+> *Drag the planet, scroll, and enjoy the magic!*
 
 ---
 
@@ -80,51 +82,3 @@
 ```bash
 git clone https://github.com/Dev-Chandan404/3d-portfolio.git
 cd 3d-portfolio
-2. Install dependencies
-Bashnpm install
-3. Run development server
-Bashnpm run dev
-Open http://localhost:5173 and enjoy the magic ✨
-Build for Production
-Bashnpm run build
-Output folder: dist/
-
-📁 Project Structure
-Bash3d-portfolio/
-├── public/
-│   └── models/                  # 3D assets
-├── src/
-│   ├── components/              # Reusable components
-│   ├── sections/                # Hero, About, Skills, Projects, Contact
-│   ├── constants/               # All your data (projects, skills, links)
-│   ├── utils/                   # Helper functions
-│   ├── App.jsx
-│   ├── SafeCanvas.jsx           # R3F Canvas wrapper
-│   └── main.jsx
-├── Planet-transformed.glb       # Main 3D planet model
-├── vite.config.js
-├── tailwind.config.js
-└── package.json
-
-🎨 How to Customize (Super Easy)
-
-Change your info → Edit src/constants/index.js
-Replace 3D model → Drop your own .glb file and update the path
-Add new projects → Just add objects in the projects array
-Update colors → Modify Tailwind config or CSS variables
-
-
-👤 Author
-Chandan
-Frontend Developer & 3D Enthusiast
-
-GitHub → @Dev-Chandan404
-Live Portfolio → chandan404.netlify.app
-LinkedIn / Twitter → Add your links in constants!
-
-
-📄 License
-This project is licensed under the MIT License — feel free to use it for your own portfolio!
-
-
-  ⭐ Star this repo if you like it!
