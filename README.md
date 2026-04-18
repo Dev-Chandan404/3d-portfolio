@@ -91,23 +91,21 @@ The goal is simple: **to turn a developer’s story into an experience visitors 
    ```bash
    git clone https://github.com/Dev-Chandan404/3d-portfolio.git
    cd 3d-portfolio
+   ````Install dependencies
+   bash
+    npm install
+    Set up environment variables
+    Create a .env file in the root directory and add your EmailJS credentials:
 
-Install dependencies
-
-bash
-npm install
-Set up environment variables
-Create a .env file in the root directory and add your EmailJS credentials:
-
-env
-VITE_APP_EMAILJS_SERVICE_ID=your_service_id
-VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
-Run the development server
-
-bash
-npm run dev
-Open http://localhost:5173 to see it live.
+    env
+    VITE_APP_EMAILJS_SERVICE_ID=your_service_id
+    VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id
+    VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
+    Run the development server
+    
+    bash
+    npm run dev
+    Open http://localhost:5173 to see it live.
 
 🛠️ Usage
 Customise Content
@@ -124,7 +122,7 @@ Tweak particle field density and colours
 
 Adjust Animations
 GSAP scroll triggers and Framer Motion variants are defined in each component. Look for motion props and useScroll hooks to fine‑tune timings and easing.
-
+````
 🌐 Deployment
 This portfolio is optimised for Netlify (or any static hosting service).
 
@@ -155,6 +153,7 @@ text
 ├── package.json
 ├── vite.config.js
 └── README.md
+````
 🙌 Contributing
 Contributions, issues, and feature requests are welcome!
 Feel free to check the issues page.
