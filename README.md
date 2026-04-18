@@ -91,3 +91,86 @@ The goal is simple: **to turn a developer’s story into an experience visitors 
    ```bash
    git clone https://github.com/Dev-Chandan404/3d-portfolio.git
    cd 3d-portfolio
+
+Install dependencies
+
+bash
+npm install
+Set up environment variables
+Create a .env file in the root directory and add your EmailJS credentials:
+
+env
+VITE_APP_EMAILJS_SERVICE_ID=your_service_id
+VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
+Run the development server
+
+bash
+npm run dev
+Open http://localhost:5173 to see it live.
+
+🛠️ Usage
+Customise Content
+All portfolio content (projects, skills, services) is centralised in configuration files inside /src/config/. Edit these to update your personal info without digging through components.
+
+Modify 3D Models
+The 3D planet and particle effects are managed in /src/components/3D/. You can:
+
+Swap the planet model (.gltf / .glb)
+
+Adjust lighting, camera position, and orbit controls
+
+Tweak particle field density and colours
+
+Adjust Animations
+GSAP scroll triggers and Framer Motion variants are defined in each component. Look for motion props and useScroll hooks to fine‑tune timings and easing.
+
+🌐 Deployment
+This portfolio is optimised for Netlify (or any static hosting service).
+
+Deploy to Netlify (One‑Click)
+https://www.netlify.com/img/deploy/button.svg
+
+Manual Deploy
+bash
+npm run build
+The static files will be generated in the dist/ folder. Upload this folder to your hosting provider.
+
+📄 Project Structure (Simplified)
+text
+3d-portfolio/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable UI & 3D components
+│   │   ├── 3D/          # Three.js scenes, planet model
+│   │   ├── sections/    # Hero, About, Projects, Contact
+│   │   └── ui/          # Buttons, cards, loaders
+│   ├── config/          # Centralised content (projects, skills)
+│   ├── hooks/           # Custom React hooks (scroll, mouse)
+│   ├── styles/          # Tailwind & global CSS
+│   ├── App.jsx          # Main app component
+│   └── main.jsx         # Entry point
+├── .env                 # Environment variables (ignored by git)
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+🙌 Contributing
+Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.
+
+Fork the project
+
+Create your feature branch (git checkout -b feature/amazing-feature)
+
+Commit your changes (git commit -m 'Add some amazing feature')
+
+Push to the branch (git push origin feature/amazing-feature)
+
+Open a Pull Request
+
+📬 Contact
+Chandan Kumar — chandan404.netlify.app
+GitHub: @Dev-Chandan404
+
+<p align="center"> <b>✦ Every pixel has a purpose. ✦</b> </p><p align="center"> <sub>Built with ☕ and obsession</sub> </p> ```
