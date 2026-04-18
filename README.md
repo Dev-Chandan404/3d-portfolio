@@ -1,4 +1,4 @@
-## ✦ DEV · CHANDAN404 · 3D PORTFOLIO
+[## ✦ DEV · CHANDAN404 · 3D PORTFOLIO
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
@@ -173,3 +173,4 @@ Chandan Kumar — chandan404.netlify.app
 GitHub: @Dev-Chandan404
 
 <p align="center"> <b>✦ Every pixel has a purpose. ✦</b> </p><p align="center"> <sub>Built with ☕ and obsession</sub> </p> ```
+](https://chandan404.netlify.app/)
