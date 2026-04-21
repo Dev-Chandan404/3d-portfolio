@@ -32,7 +32,7 @@
 <br/>
 
 <a href="https://chandan404.netlify.app/">
-  <img src="https://api.screenshotone.com/take?url=https://chandan404.netlify.app&viewport_width=1280&viewport_height=720&format=jpg&image_quality=90" alt="3D Portfolio Preview" width="90%" />
+  <img src="./public/images/portfolio.png" alt="3D Portfolio Preview" width="90%" />
 </a>
 
 *Step into the 3D Universe — Interactive Planet. Immersive Cosmos.*
